@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Features on Straying from the Google-able</title>
+    <link>https://ag4ve.github.io/sftg-blog/categories/features/</link>
+    <description>Recent content in Features on Straying from the Google-able</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 Mar 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ag4ve.github.io/sftg-blog/categories/features/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>highlighted code showcase</title>
+      <link>https://ag4ve.github.io/sftg-blog/2015/03/highlighted-code-showcase/</link>
+      <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://ag4ve.github.io/sftg-blog/2015/03/highlighted-code-showcase/</guid>
+      <description>&lt;p&gt;Tranquilpeak Hugo theme have its own theme to highlight source code. It&amp;rsquo;s based on GitHub theme: simple and elegant. Check out how it sublimate source codes.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Image gallery showcase</title>
+      <link>https://ag4ve.github.io/sftg-blog/2013/02/image-gallery-showcase/</link>
+      <pubDate>Mon, 18 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://ag4ve.github.io/sftg-blog/2013/02/image-gallery-showcase/</guid>
+      <description>&lt;p&gt;And here is the image gallery!
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

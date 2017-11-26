@@ -1,0 +1,86 @@
+---
+title: "Dotfiles (part 1)"                                       
+date: 2014-08-12
+categories:                                         
+  - shell
+  - config
+  - script
+tags:
+  - highlight code
+  - github theme
+  - test
+thumbnailImagePosition: left
+thumbnailImage: //d1u9biwaxjngwg.cloudfront.net/highlighted-code-showcase/peak-140.jpg
+---
+
+Lots of people put their dotfiles online. See:
+
+* http://dotfiles.github.io/
+* http://dotfiles.org/
+<br>... and others?
+
+<!--more-->
+
+My problem with this is those files are yours and not mine - it takes me more thought process to figure out whether I want a feature that you're happy with than it does for me to write my own. So, I don't use these services - yes, I've put my dotfiles on Github and because they're always in flux and I like having clean commits, they're ~2 years old by now. However, this needs to be documented somewhere - I've got massive zsh/vim/tmux/etc config files that people always ask me "where do I download that from" and I answer "you don't, it's this function here". So here I'm starting to document what I have and the use.
+
+So, without further adieu;
+
+The simplest thing I do is sdig (which can give similar output as host but then I can add more options):
+
+{{< codeblock "sdig.sh" "bash" >}}
+sdig () {
+  dig "$@" +short
+}
+{{< /codeblock >}}
+
+That's it. It means, don't fill up my screan with tons of stuff I don't care about.
+
+Next, a similar idea for whois - I don't care about most of that output:
+
+{{< codeblock "whoism.sh" "bash" >}}
+whoism () {
+    whois "$1" | egrep '^(inetnum|netname|descr|address|CIDR|OrgName|OrgId|Address|City|StateProv|PostalCode|[Cc]ountry|inetrev|owner(id)?|responsible|nserver):'
+}
+{{< /codeblock >}}
+
+Keep in mind this is incomplete - there are lots of whois databases and I haven't been thorough with this but it's a start.
+
+Now, we need one more utility which tries to find the AS information for an address and return data. Since I don't warehouse this data, I just go out to Team CYRMU and returns what I want (kinda). I wrote a simple perl script that uses their DNS api and can work with lots of IP addresses. Which is:
+
+https://github.com/ag4ve/geocidr
+
+Ok, so once this is installed, we can put all of these together and get a bit of info on an IP (and sometimes things differ between lookup types):
+
+{{< codeblock "iplook.sh" "bash" >}}
+iplook () {
+    inip="$1"
+
+    dig -x "$inip" +short
+    geocidr --ip "$inip"
+    whoism "$inip"
+}
+{{< /codeblock >}}
+
+Lastly, a few things that are simple enough to put into aliases:
+
+> alias torexit="curl http://torstatus.blutmagie.de/ip_list_exit.php/Tor_ip_list_EXIT.csv"
+
+Because sometimes I'm curious if someone wants not to be tracked.
+
+> alias torcurl="curl --socks5 127.0.0.1:9050"
+
+Because sometimes I want to grab something and not be tracked :)
+
+(Note: this does not hide DNS)
+
+> alias cidr='geocidr --header --ip '
+
+The most obvious use for my geocidr script (because I haven't gotten around to committing more sane defaults).
+
+> alias uridec="perl -MURI::Escape -nle 'print uri_unescape(\$_)'"
+
+Ever see a url that looks encoded (not base64 - just url encoded) well I just:
+
+> echo "url" | uridec
+
+And see what it says

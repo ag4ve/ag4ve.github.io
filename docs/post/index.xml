@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Straying from the Google-able</title>
+    <link>https://ag4ve.github.io/sftg-blog/post/</link>
+    <description>Recent content in Posts on Straying from the Google-able</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 15 Jun 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ag4ve.github.io/sftg-blog/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Welcome to Tranquilpeak 0.4.3-BETA</title>
+      <link>https://ag4ve.github.io/sftg-blog/2015/06/welcome-to-tranquilpeak-0.4.3-beta/</link>
+      <pubDate>Mon, 15 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://ag4ve.github.io/sftg-blog/2015/06/welcome-to-tranquilpeak-0.4.3-beta/</guid>
+      <description>&lt;p&gt;Tranquilpeak is a gorgeous responsive theme for Hugo blog framework. It has many features and integrated services to improve user experience.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>highlighted code showcase</title>
+      <link>https://ag4ve.github.io/sftg-blog/2015/03/highlighted-code-showcase/</link>
+      <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://ag4ve.github.io/sftg-blog/2015/03/highlighted-code-showcase/</guid>
+      <description>&lt;p&gt;Tranquilpeak Hugo theme have its own theme to highlight source code. It&amp;rsquo;s based on GitHub theme: simple and elegant. Check out how it sublimate source codes.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Tags plugins showcase</title>
+      <link>https://ag4ve.github.io/sftg-blog/2014/10/tags-plugins-showcase/</link>
+      <pubDate>Wed, 29 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://ag4ve.github.io/sftg-blog/2014/10/tags-plugins-showcase/</guid>
+      <description>&lt;p&gt;This post is used to show how tag plugins are displayed. See &lt;a href=&#34;https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md#tags&#34;&gt;docs&lt;/a&gt; for more info.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Image gallery showcase</title>
+      <link>https://ag4ve.github.io/sftg-blog/2013/02/image-gallery-showcase/</link>
+      <pubDate>Mon, 18 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://ag4ve.github.io/sftg-blog/2013/02/image-gallery-showcase/</guid>
+      <description>&lt;p&gt;And here is the image gallery!
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://ag4ve.github.io/sftg-blog/1/01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ag4ve.github.io/sftg-blog/1/01/</guid>
+      <description>title: &amp;ldquo;Finding a host&amp;rdquo;
+date: 2017-10-22 categories:
+- osint - network
+thumbnailImagePosition: left
+thumbnailImage: //d1u9biwaxjngwg.cloudfront.net/elements-showcase/vintage-140.jpg I figured I&amp;rsquo;d write a quick blog post about this (since I do it quite a bit - this isn&amp;rsquo;t meant to be complete - just what I&amp;rsquo;m doing right now).
+I figured I needed to get back on IRC today, went to login and got this message:
+08:58 [Freenode] -NickServ(NickServ@services.)- This nickname is registered.</description>
+    </item>
+    
+  </channel>
+</rss>
