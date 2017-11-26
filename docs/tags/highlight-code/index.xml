@@ -6,19 +6,70 @@
     <description>Recent content in Highlight Code on Straying from the Google-able</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Mar 2015 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Oct 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ag4ve.github.io/sftg-blog/tags/highlight-code/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>highlighted code showcase</title>
-      <link>https://ag4ve.github.io/sftg-blog/2015/03/highlighted-code-showcase/</link>
-      <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
+      <title>Finding a host</title>
+      <link>https://ag4ve.github.io/sftg-blog/2017/10/finding-a-host/</link>
+      <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://ag4ve.github.io/sftg-blog/2015/03/highlighted-code-showcase/</guid>
-      <description>&lt;p&gt;Tranquilpeak Hugo theme have its own theme to highlight source code. It&amp;rsquo;s based on GitHub theme: simple and elegant. Check out how it sublimate source codes.
-&lt;/p&gt;</description>
+      <guid>https://ag4ve.github.io/sftg-blog/2017/10/finding-a-host/</guid>
+      <description>&lt;p&gt;I figured I needed to get back on IRC today, went to login and got this message:&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Bash Patterns</title>
+      <link>https://ag4ve.github.io/sftg-blog/2017/04/bash-patterns/</link>
+      <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ag4ve.github.io/sftg-blog/2017/04/bash-patterns/</guid>
+      <description>&lt;p&gt;&lt;b&gt;Audience&lt;/b&gt;: I assume some prior Unix command line experience&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Note&lt;/b&gt;: I&amp;rsquo;ve done much more work to the slide deck that derrived from this post and have found some errors in this post along the way that I haven&amp;rsquo;t gotten around to fixing. Until I do, I&amp;rsquo;d recommend referring to my &lt;a href=&#34;https://ag4ve.github.io/bash-patterns/#/&#34;&gt;presentation slides&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I keep running into &amp;ldquo;bash scripts&amp;rdquo; that look like old style shell scripts - capitalized variable names, tons of subshells piping all over the place, etc. This does not need to be the case - bash scripts can be written with some elegance.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Adventures in QubesOS (part 1)</title>
+      <link>https://ag4ve.github.io/sftg-blog/2015/11/adventures-in-qubesos-part-1/</link>
+      <pubDate>Mon, 23 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://ag4ve.github.io/sftg-blog/2015/11/adventures-in-qubesos-part-1/</guid>
+      <description>&lt;!-- toc --&gt;
+
+&lt;h1 id=&#34;qubes-install&#34;&gt;Qubes Install&lt;/h1&gt;
+
+&lt;p&gt;I&amp;rsquo;m mainly writing this so that I don&amp;rsquo;t forget. The installer for Redhat/Fedora/Qubes (Anaconda) doesn&amp;rsquo;t do well when you try to do an unusual partition scheme. How unusual? Lets go with:
+
+* mdadm raid for everything
+* luks encrypted root and swap
+* provision an efi secure boot partition (Qubes doesn&amp;rsquo;t currently support this)
+* use 4x 3TB disks&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Dotfiles (part 1)</title>
+      <link>https://ag4ve.github.io/sftg-blog/2014/08/dotfiles-part-1/</link>
+      <pubDate>Tue, 12 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://ag4ve.github.io/sftg-blog/2014/08/dotfiles-part-1/</guid>
+      <description>&lt;p&gt;Lots of people put their dotfiles online. See:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://dotfiles.github.io/&#34;&gt;http://dotfiles.github.io/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://dotfiles.org/&#34;&gt;http://dotfiles.org/&lt;/a&gt;
+&lt;br&gt;&amp;hellip; and others?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

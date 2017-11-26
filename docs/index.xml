@@ -6,64 +6,104 @@
     <description>Recent content on Straying from the Google-able</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Jun 2015 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Oct 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ag4ve.github.io/sftg-blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Welcome to Tranquilpeak 0.4.3-BETA</title>
-      <link>https://ag4ve.github.io/sftg-blog/2015/06/welcome-to-tranquilpeak-0.4.3-beta/</link>
-      <pubDate>Mon, 15 Jun 2015 00:00:00 +0000</pubDate>
+      <title>Finding a host</title>
+      <link>https://ag4ve.github.io/sftg-blog/2017/10/finding-a-host/</link>
+      <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://ag4ve.github.io/sftg-blog/2015/06/welcome-to-tranquilpeak-0.4.3-beta/</guid>
-      <description>&lt;p&gt;Tranquilpeak is a gorgeous responsive theme for Hugo blog framework. It has many features and integrated services to improve user experience.
-&lt;/p&gt;</description>
+      <guid>https://ag4ve.github.io/sftg-blog/2017/10/finding-a-host/</guid>
+      <description>&lt;p&gt;I figured I needed to get back on IRC today, went to login and got this message:&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>highlighted code showcase</title>
-      <link>https://ag4ve.github.io/sftg-blog/2015/03/highlighted-code-showcase/</link>
-      <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
+      <title>Bash Patterns</title>
+      <link>https://ag4ve.github.io/sftg-blog/2017/04/bash-patterns/</link>
+      <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://ag4ve.github.io/sftg-blog/2015/03/highlighted-code-showcase/</guid>
-      <description>&lt;p&gt;Tranquilpeak Hugo theme have its own theme to highlight source code. It&amp;rsquo;s based on GitHub theme: simple and elegant. Check out how it sublimate source codes.
-&lt;/p&gt;</description>
+      <guid>https://ag4ve.github.io/sftg-blog/2017/04/bash-patterns/</guid>
+      <description>&lt;p&gt;&lt;b&gt;Audience&lt;/b&gt;: I assume some prior Unix command line experience&lt;/p&gt;
+
+&lt;p&gt;&lt;b&gt;Note&lt;/b&gt;: I&amp;rsquo;ve done much more work to the slide deck that derrived from this post and have found some errors in this post along the way that I haven&amp;rsquo;t gotten around to fixing. Until I do, I&amp;rsquo;d recommend referring to my &lt;a href=&#34;https://ag4ve.github.io/bash-patterns/#/&#34;&gt;presentation slides&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I keep running into &amp;ldquo;bash scripts&amp;rdquo; that look like old style shell scripts - capitalized variable names, tons of subshells piping all over the place, etc. This does not need to be the case - bash scripts can be written with some elegance.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Tags plugins showcase</title>
-      <link>https://ag4ve.github.io/sftg-blog/2014/10/tags-plugins-showcase/</link>
-      <pubDate>Wed, 29 Oct 2014 00:00:00 +0000</pubDate>
+      <title>Github SSH Key Blackhole (single user key)</title>
+      <link>https://ag4ve.github.io/sftg-blog/2017/02/github-ssh-key-blackhole-single-user-key/</link>
+      <pubDate>Tue, 07 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://ag4ve.github.io/sftg-blog/2014/10/tags-plugins-showcase/</guid>
-      <description>&lt;p&gt;This post is used to show how tag plugins are displayed. See &lt;a href=&#34;https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md#tags&#34;&gt;docs&lt;/a&gt; for more info.
-&lt;/p&gt;</description>
+      <guid>https://ag4ve.github.io/sftg-blog/2017/02/github-ssh-key-blackhole-single-user-key/</guid>
+      <description>&lt;p&gt;I was kind of dumbstruck at work when I got a permission error when a key was added. After realizing it was associated with another account, I realized that maybe there was a bigger problem since git uses a single user - &amp;ldquo;git&amp;rdquo; over ssh - for all normal command line transactions (there&amp;rsquo;s also a REST API you can use to create repos and the like).&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Image gallery showcase</title>
-      <link>https://ag4ve.github.io/sftg-blog/2013/02/image-gallery-showcase/</link>
-      <pubDate>Mon, 18 Feb 2013 00:00:00 +0000</pubDate>
+      <title>Adventures in QubesOS (part 1)</title>
+      <link>https://ag4ve.github.io/sftg-blog/2015/11/adventures-in-qubesos-part-1/</link>
+      <pubDate>Mon, 23 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://ag4ve.github.io/sftg-blog/2013/02/image-gallery-showcase/</guid>
-      <description>&lt;p&gt;And here is the image gallery!
-&lt;/p&gt;</description>
+      <guid>https://ag4ve.github.io/sftg-blog/2015/11/adventures-in-qubesos-part-1/</guid>
+      <description>&lt;!-- toc --&gt;
+
+&lt;h1 id=&#34;qubes-install&#34;&gt;Qubes Install&lt;/h1&gt;
+
+&lt;p&gt;I&amp;rsquo;m mainly writing this so that I don&amp;rsquo;t forget. The installer for Redhat/Fedora/Qubes (Anaconda) doesn&amp;rsquo;t do well when you try to do an unusual partition scheme. How unusual? Lets go with:
+
+* mdadm raid for everything
+* luks encrypted root and swap
+* provision an efi secure boot partition (Qubes doesn&amp;rsquo;t currently support this)
+* use 4x 3TB disks&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title></title>
-      <link>https://ag4ve.github.io/sftg-blog/1/01/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>Dotfiles (part 1)</title>
+      <link>https://ag4ve.github.io/sftg-blog/2014/08/dotfiles-part-1/</link>
+      <pubDate>Tue, 12 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://ag4ve.github.io/sftg-blog/1/01/</guid>
-      <description>title: &amp;ldquo;Finding a host&amp;rdquo;
-date: 2017-10-22 categories:
-- osint - network
-thumbnailImagePosition: left
-thumbnailImage: //d1u9biwaxjngwg.cloudfront.net/elements-showcase/vintage-140.jpg I figured I&amp;rsquo;d write a quick blog post about this (since I do it quite a bit - this isn&amp;rsquo;t meant to be complete - just what I&amp;rsquo;m doing right now).
-I figured I needed to get back on IRC today, went to login and got this message:
-08:58 [Freenode] -NickServ(NickServ@services.)- This nickname is registered.</description>
+      <guid>https://ag4ve.github.io/sftg-blog/2014/08/dotfiles-part-1/</guid>
+      <description>&lt;p&gt;Lots of people put their dotfiles online. See:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://dotfiles.github.io/&#34;&gt;http://dotfiles.github.io/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://dotfiles.org/&#34;&gt;http://dotfiles.org/&lt;/a&gt;
+&lt;br&gt;&amp;hellip; and others?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Open Source Mobile Communication</title>
+      <link>https://ag4ve.github.io/sftg-blog/2012/10/open-source-mobile-communication/</link>
+      <pubDate>Tue, 23 Oct 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://ag4ve.github.io/sftg-blog/2012/10/open-source-mobile-communication/</guid>
+      <description>&lt;p&gt;[Draft]&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve been thinking about this for a year now. The idea was probably spawned from T-Mobile providing a wireless router that you could use your phone to make calls through and then given more life with the emergence of everyone else providing femtocells.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Password Schema</title>
+      <link>https://ag4ve.github.io/sftg-blog/2012/10/password-schema/</link>
+      <pubDate>Sat, 20 Oct 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://ag4ve.github.io/sftg-blog/2012/10/password-schema/</guid>
+      <description>&lt;p&gt;A while ago a friend told me that a phrase was better to use for a password than a bunch of jumbled characters. For instance, using &amp;ldquo;This is a secure password.&amp;rdquo; would &amp;ldquo;SD4#ac&amp;rdquo;. I didn&amp;rsquo;t believe him which started some email exchanges in which I basically proved myself wrong (with basic math). The following is what i found.
+&lt;/p&gt;</description>
     </item>
     
   </channel>

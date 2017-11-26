@@ -6,34 +6,116 @@
     <description>Recent content in Categories on Straying from the Google-able</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Mon, 23 Nov 2015 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ag4ve.github.io/sftg-blog/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Features</title>
-      <link>https://ag4ve.github.io/sftg-blog/categories/features/</link>
-      <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
+      <title>Anaconda</title>
+      <link>https://ag4ve.github.io/sftg-blog/categories/anaconda/</link>
+      <pubDate>Mon, 23 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://ag4ve.github.io/sftg-blog/categories/features/</guid>
+      <guid>https://ag4ve.github.io/sftg-blog/categories/anaconda/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Releases</title>
-      <link>https://ag4ve.github.io/sftg-blog/categories/releases/</link>
-      <pubDate>Mon, 15 Jun 2015 00:00:00 +0000</pubDate>
+      <title>Bash</title>
+      <link>https://ag4ve.github.io/sftg-blog/categories/bash/</link>
+      <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://ag4ve.github.io/sftg-blog/categories/releases/</guid>
+      <guid>https://ag4ve.github.io/sftg-blog/categories/bash/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Tranquilpeak</title>
-      <link>https://ag4ve.github.io/sftg-blog/categories/tranquilpeak/</link>
-      <pubDate>Mon, 15 Jun 2015 00:00:00 +0000</pubDate>
+      <title>Code</title>
+      <link>https://ag4ve.github.io/sftg-blog/categories/code/</link>
+      <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://ag4ve.github.io/sftg-blog/categories/tranquilpeak/</guid>
+      <guid>https://ag4ve.github.io/sftg-blog/categories/code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Config</title>
+      <link>https://ag4ve.github.io/sftg-blog/categories/config/</link>
+      <pubDate>Tue, 12 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://ag4ve.github.io/sftg-blog/categories/config/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Idea</title>
+      <link>https://ag4ve.github.io/sftg-blog/categories/idea/</link>
+      <pubDate>Tue, 23 Oct 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://ag4ve.github.io/sftg-blog/categories/idea/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Network</title>
+      <link>https://ag4ve.github.io/sftg-blog/categories/network/</link>
+      <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ag4ve.github.io/sftg-blog/categories/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Osint</title>
+      <link>https://ag4ve.github.io/sftg-blog/categories/osint/</link>
+      <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ag4ve.github.io/sftg-blog/categories/osint/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Password</title>
+      <link>https://ag4ve.github.io/sftg-blog/categories/password/</link>
+      <pubDate>Sat, 20 Oct 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://ag4ve.github.io/sftg-blog/categories/password/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Qubes</title>
+      <link>https://ag4ve.github.io/sftg-blog/categories/qubes/</link>
+      <pubDate>Mon, 23 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://ag4ve.github.io/sftg-blog/categories/qubes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Script</title>
+      <link>https://ag4ve.github.io/sftg-blog/categories/script/</link>
+      <pubDate>Sun, 16 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ag4ve.github.io/sftg-blog/categories/script/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>https://ag4ve.github.io/sftg-blog/categories/security/</link>
+      <pubDate>Tue, 07 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ag4ve.github.io/sftg-blog/categories/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shell</title>
+      <link>https://ag4ve.github.io/sftg-blog/categories/shell/</link>
+      <pubDate>Tue, 12 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://ag4ve.github.io/sftg-blog/categories/shell/</guid>
       <description></description>
     </item>
     

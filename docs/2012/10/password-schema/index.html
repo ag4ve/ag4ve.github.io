@@ -1,0 +1,769 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+  
+
+
+  
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.30.2 with theme Tranquilpeak 0.4.3-BETA">
+    <title>Password Schema</title>
+    <meta name="author" content="Shawn Wilson">
+    <meta name="keywords" content="">
+
+    <link rel="icon" href="https://ag4ve.github.io/sftg-blog/favicon.png">
+    
+
+    
+    <meta name="description" content="A while ago a friend told me that a phrase was better to use for a password than a bunch of jumbled characters. For instance, using &ldquo;This is a secure password.&rdquo; would &ldquo;SD4#ac&rdquo;. I didn&rsquo;t believe him which started some email exchanges in which I basically proved myself wrong (with basic math). The following is what i found.
+">
+    <meta property="og:description" content="A while ago a friend told me that a phrase was better to use for a password than a bunch of jumbled characters. For instance, using &ldquo;This is a secure password.&rdquo; would &ldquo;SD4#ac&rdquo;. I didn&rsquo;t believe him which started some email exchanges in which I basically proved myself wrong (with basic math). The following is what i found.
+">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Password Schema">
+    <meta property="og:url" content="/2012/10/password-schema/">
+    <meta property="og:site_name" content="Straying from the Google-able">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Straying from the Google-able">
+    <meta name="twitter:description" content="A while ago a friend told me that a phrase was better to use for a password than a bunch of jumbled characters. For instance, using &ldquo;This is a secure password.&rdquo; would &ldquo;SD4#ac&rdquo;. I didn&rsquo;t believe him which started some email exchanges in which I basically proved myself wrong (with basic math). The following is what i found.
+">
+    
+      <meta name="twitter:creator" content="@ag4ve">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/a509a996d9cf920cbf91a944db2b9bc6?s=640">
+    
+
+    
+      <meta property="og:image" content="//d1u9biwaxjngwg.cloudfront.net/highlighted-code-showcase/peak-140.jpg">
+    
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://ag4ve.github.io/sftg-blog/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://ag4ve.github.io/sftg-blog/">Straying from the Google-able</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://ag4ve.github.io/sftg-blog/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="//www.gravatar.com/avatar/a509a996d9cf920cbf91a944db2b9bc6?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://ag4ve.github.io/sftg-blog/#about">
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/a509a996d9cf920cbf91a944db2b9bc6?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Shawn Wilson</h4>
+        
+          <h5 class="sidebar-profile-bio">Squirrel Chacer</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ag4ve.github.io/sftg-blog/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ag4ve.github.io/sftg-blog/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ag4ve.github.io/sftg-blog/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/ag4ve" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ag4ve.github.io/sftg-blog/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Password Schema
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2012-10-20T00:00:00Z">
+        
+  October 20, 2012
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://ag4ve.github.io/sftg-blog/categories/security">security</a>, 
+    
+      <a class="category-link" href="https://ag4ve.github.io/sftg-blog/categories/password">password</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>A while ago a friend told me that a phrase was better to use for a password than a bunch of jumbled characters. For instance, using &ldquo;This is a secure password.&rdquo; would &ldquo;SD4#ac&rdquo;. I didn&rsquo;t believe him which started some email exchanges in which I basically proved myself wrong (with basic math). The following is what i found.
+</p>
+
+<p>First, the technical side of things - if the services you use (facebook, twitter, comcast, banks, universities computers, work systems, etc) store your passwords correctly, when they get compromised, most passwords over 9 characters aren&rsquo;t easily compromised (this is a time sensitive figure, so in future years this won&rsquo;t be an accurate number). The way that see [1] how someone can try to retrieve at your passwords after the hash has gone public.</p>
+
+<p>Note: that is as technical that I will get in this article. The remainder will be middle school math.</p>
+
+<p>Now, for the math. Lets start by proving the math:</p>
+
+<p>If you can have a password of length two, and you can only use three characters in this string (lets use a, b, and c), how many possibilities can you have?</p>
+
+<p>aa, ab, ac, ba, bb, bc, ca, cb, cc</p>
+
+<p>So, 9 possibilities. How do we mathematically get to this number? 3^2, or:</p>
+
+<p>(possible characters)^(character length)</p>
+
+<p>Note: This does assumes a constant of possible characters and a constant length. Though the formula allowing for less length is a bit harder to explain and doesn&rsquo;t add anything to the logic here).</p>
+
+<p>There are 95 symbols on a qwerty keyboard (count them - 26 lower, 26 upper, 26 number row, 16 misc, and space). Most passwords can contain alternative characters, but most people won&rsquo;t use them. Most people use an 8 character password. I was informed today is nominal for a consumer desktop computer with a 1.6TB drive to crack an 8 character password - again, see [1] for explanation on how you can do this (and I broke my rule on being technical but figured it was worth it to point out that this is something you can do cheaply and is not just something governments do). Though, lets get past the technology and figure out how many tries it would take to brute force an 8 character password.</p>
+
+<p>95^8 = 6634204312890625</p>
+
+<p>But, lets assume you&rsquo;re better than most people and use 16 completely random keyboard characters:</p>
+
+<p>95^16 = 44012666865176569775543212890625</p>
+
+<p>This is a fairly large number that it takes a modern computer some time to brute force and a day to crack properly (think years, but again, see [1] below). So, why is using a random password the wrong way to do it? There&rsquo;s a few reasons:</p>
+
+<ol>
+<li><p>it&rsquo;s hard to remember,</p></li>
+
+<li><p>you&rsquo;re going to use less characters, so it&rsquo;ll be easier to crack,</p></li>
+
+<li><p>because it&rsquo;s so hard to remember you&rsquo;re less likely to want to change it.</p></li>
+</ol>
+
+<p>If however, you&rsquo;re one of those people that can memorize a deck of cards, has memorized Pi, 1^(<sup>1</sup>&frasl;<sub>2</sub>), or ln to 100 decimal places, you&rsquo;re probably using very strong passwords and can stop reading now - this isn&rsquo;t for you. For everyone else&hellip;</p>
+
+<p>My recommendation - use a proper english sentence. Lets do the math and see why. Lets use this string for an example: &ldquo;I&rsquo;ve got this bank account that i&rsquo;m trying to remember the password for.&rdquo;</p>
+
+<p>This is quite a simple sentence, and it&rsquo;s 73 characters long. For the math, lets assume it&rsquo;s all lower case alphabetic characters. so:</p>
+
+<p>26^73 = 1963606232436475854501753716263799429014060410113303954060845728432540419682760498206668083388875800576</p>
+
+<p>That&rsquo;s a bit wrong because there are 3 non-alphanumeric characters - a space (&rsquo; &lsquo;), a apostrophe (&ldquo;&rsquo;), and a period (&lsquo;.&rsquo;) and if I were writing a proper sentence I would&rsquo;ve capitalized &lsquo;I&rsquo; in &ldquo;I&rsquo;ve&rdquo; and &ldquo;I&rsquo;m&rdquo;. But i figure this gives enough of a difference to show why you might want to change how you think about what a good password is. Maybe not - i could use a dictionary attack on a password and get at the password a bit quicker. Lets assume there are 50,000 english words most americans would use every day. if we do that, we do the math for 13 words in our phrase Again, the base is the number of things in our phrase or words to the power of length or the number of words. So:</p>
+
+<p>50000^13 = 12207031250000000000000000000000000000000000000000000000000000</p>
+
+<p>This isn&rsquo;t as long as doing a basic brute force attack (and you still have to compensate for the period and proper capitalization) but it&rsquo;s still orders of magnitude better than your random 8 character password and still easier to remember than S4$5bA^0 - right?</p>
+
+<p>There is a slight caveat - if someone knows your password schema, it&rsquo;s not hard to narrow down the majority of the words you might use to the 10,000 (or less) most used and hope you didn&rsquo;t use a word with more than three syllables. So I would recommend using a proper noun in your sentence - &ldquo;Niagra Falls was quite noisy in the summer&rdquo;, &ldquo;A dark Guiness tasts good in the summer&rdquo;, &ldquo;I live in the the common wealth of Virginia&rdquo;, &ldquo;I&rsquo;m buying the most awesome pair of Levis jeans. I can&rsquo;t wait for them to show up so I can wear them&rdquo;, etc. Speak a non-english language? You&rsquo;ve just thwarted most dictionary attacks. Know chineese, or hebrew? You can make a pass phrase that&rsquo;ll be take generations to crack using current technology because of the character set (if you&rsquo;re password is accepted of course).</p>
+
+<p>If you run into a system that limits password length - I give them hell on as many social networks as possible as there is <em>NO</em> reason to limit password length (see one way hashing algorithms for the reason why, take it as fact that there is no reason anyone should limit the length of the password you use). Other than that, i try to think of a password with as many long words and proper nouns as possible within the constraint. if a system places limits on characters (again, there&rsquo;s no reason for this) replace the character with something else - I have toreplace spaces with 0s often.</p>
+
+<p>Most people recommend against writing passwords down. If you&rsquo;re argument is about making a long password vs writing it down - Write them down! Just don&rsquo;t write what they are for. If you use this method (of a sentence as a pass phrase), you should have a sentence describing the source (to make remembering it easier even if it is written down) that generally doesn&rsquo;t contain the sources name. Keep the list in your wallet - who cares if you loose your wallet, you didn&rsquo;t write the source of the password so you still have a separation of the lock from the key. And how often do you loose your wallet anyway? If you do, and you didn&rsquo;t write the source of your credentials by them, I think you can wait a little wile before paranoia gets you to change your pass phrases.</p>
+
+<p>Lastly, what type of attack are you thwarting? When your bank, or power company, or a site like linkedin, or your employer is hacked and people put the password dump out on the internet (or just keep the list to themselves), people start going to work on that dump. If your password isn&rsquo;t one of the ones that gets pulled from the password dump you&rsquo;re password is safe.</p>
+
+<p>We all know that most people use the same passwords fur multiple accounts, so the theory is if you have an account on one system that is hacked and the password is retrieved from a password dump, they&rsquo;ll be able to get data (or do other malicious things) from your other accounts. By making a password no one can grab with standard attacks against a password hash, you insure they can&rsquo;t login to your account from the place that was just hacked. You also insure that if you did use the same password on many accounts, you won&rsquo;t have to run around changing the password (if you even remember which sites you used that password on in the first place). Last, this schema allows you to easily remember different passwords on different sites so that none of these are issues for you.</p>
+
+<ol>
+<li><p>How I&rsquo;d go about cracking passwords:<br>
+<a href="http://blog.thireus.com/cracking-story-how-i-cracked-over-122-million-sha1-and-md5-hashed-passwords">http://blog.thireus.com/cracking-story-how-i-cracked-over-122-million-sha1-and-md5-hashed-passwords</a></p></li>
+
+<li><p>If you care about how to run through password hash quicker:<br>
+<a href="http://www.pwcrack.com/rainbowtables.shtml">http://www.pwcrack.com/rainbowtables.shtml</a></p></li>
+
+<li><p>This xkcd was pointed out to me (though I think it is sorta wrong on the math): <br>
+<a href="http://xkcd.com/936/">http://xkcd.com/936/</a></p></li>
+</ol>
+
+<p>[ I gave this as a live demo talk at HacDC&rsquo;s Cryptoparty (<a href="http://www.cryptoparty.org/wiki/Washington,_DC">http://www.cryptoparty.org/wiki/Washington,_DC</a>) and I figured it would be good in print form ]</p>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://ag4ve.github.io/sftg-blog/tags/test/">test</a>
+
+                  </div>
+                
+              
+            
+            
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ag4ve.github.io/sftg-blog/2012/10/open-source-mobile-communication/" data-tooltip="Open Source Mobile Communication">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://ag4ve.github.io/sftg-blog/2012/10/password-schema/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://ag4ve.github.io/sftg-blog/2012/10/password-schema/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://ag4ve.github.io/sftg-blog/2012/10/password-schema/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2017 Shawn Wilson. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://ag4ve.github.io/sftg-blog/2012/10/open-source-mobile-communication/" data-tooltip="Open Source Mobile Communication">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://ag4ve.github.io/sftg-blog/2012/10/password-schema/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://ag4ve.github.io/sftg-blog/2012/10/password-schema/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://ag4ve.github.io/sftg-blog/2012/10/password-schema/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fag4ve.github.io%2Fsftg-blog%2F2012%2F10%2Fpassword-schema%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fag4ve.github.io%2Fsftg-blog%2F2012%2F10%2Fpassword-schema%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fag4ve.github.io%2Fsftg-blog%2F2012%2F10%2Fpassword-schema%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/a509a996d9cf920cbf91a944db2b9bc6?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Shawn Wilson</h4>
+    
+      <div id="about-card-bio">Squirrel Chacer</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Do stuff
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        US
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://ag4ve.github.io/sftg-blog/2017/10/finding-a-host/">
+                <h3 class="media-heading">Finding a host</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>I figured I needed to get back on IRC today, went to login and got this message:</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://ag4ve.github.io/sftg-blog/2017/04/bash-patterns/">
+                <h3 class="media-heading">Bash Patterns</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p><b>Audience</b>: I assume some prior Unix command line experience</p>
+
+<p><b>Note</b>: I&rsquo;ve done much more work to the slide deck that derrived from this post and have found some errors in this post along the way that I haven&rsquo;t gotten around to fixing. Until I do, I&rsquo;d recommend referring to my <a href="https://ag4ve.github.io/bash-patterns/#/">presentation slides</a>.</p>
+
+<p>I keep running into &ldquo;bash scripts&rdquo; that look like old style shell scripts - capitalized variable names, tons of subshells piping all over the place, etc. This does not need to be the case - bash scripts can be written with some elegance.</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://ag4ve.github.io/sftg-blog/2017/02/github-ssh-key-blackhole-single-user-key/">
+                <h3 class="media-heading">Github SSH Key Blackhole (single user key)</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>I was kind of dumbstruck at work when I got a permission error when a key was added. After realizing it was associated with another account, I realized that maybe there was a bigger problem since git uses a single user - &ldquo;git&rdquo; over ssh - for all normal command line transactions (there&rsquo;s also a REST API you can use to create repos and the like).</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://ag4ve.github.io/sftg-blog/2015/11/adventures-in-qubesos-part-1/">
+                <h3 class="media-heading">Adventures in QubesOS (part 1)</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2015
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><!-- toc -->
+
+<h1 id="qubes-install">Qubes Install</h1>
+
+<p>I&rsquo;m mainly writing this so that I don&rsquo;t forget. The installer for Redhat/Fedora/Qubes (Anaconda) doesn&rsquo;t do well when you try to do an unusual partition scheme. How unusual? Lets go with:
+
+* mdadm raid for everything
+* luks encrypted root and swap
+* provision an efi secure boot partition (Qubes doesn&rsquo;t currently support this)
+* use 4x 3TB disks</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://ag4ve.github.io/sftg-blog/2014/08/dotfiles-part-1/">
+                <h3 class="media-heading">Dotfiles (part 1)</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2014
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>Lots of people put their dotfiles online. See:</p>
+
+<ul>
+<li><a href="http://dotfiles.github.io/">http://dotfiles.github.io/</a></li>
+<li><a href="http://dotfiles.org/">http://dotfiles.org/</a>
+<br>&hellip; and others?</li>
+</ul>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://ag4ve.github.io/sftg-blog/2012/10/open-source-mobile-communication/">
+                <h3 class="media-heading">Open Source Mobile Communication</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2012
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>[Draft]</p>
+
+<p>I&rsquo;ve been thinking about this for a year now. The idea was probably spawned from T-Mobile providing a wireless router that you could use your phone to make calls through and then given more life with the emergence of everyone else providing femtocells.</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://ag4ve.github.io/sftg-blog/2012/10/password-schema/">
+                <h3 class="media-heading">Password Schema</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2012
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>A while ago a friend told me that a phrase was better to use for a password than a bunch of jumbled characters. For instance, using &ldquo;This is a secure password.&rdquo; would &ldquo;SD4#ac&rdquo;. I didn&rsquo;t believe him which started some email exchanges in which I basically proved myself wrong (with basic math). The following is what i found.
+</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         7 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://ag4ve.github.io/sftg-blog/images/cover.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://ag4ve.github.io/sftg-blog/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/ag4ve.github.io\/sftg-blog\/2012\/10\/password-schema\/';
+          
+            this.page.identifier = '\/2012\/10\/password-schema\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'tranquilpeak';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+    
+  </body>
+</html>
+

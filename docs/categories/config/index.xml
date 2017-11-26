@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Config on Straying from the Google-able</title>
+    <link>https://ag4ve.github.io/sftg-blog/categories/config/</link>
+    <description>Recent content in Config on Straying from the Google-able</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 12 Aug 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ag4ve.github.io/sftg-blog/categories/config/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dotfiles (part 1)</title>
+      <link>https://ag4ve.github.io/sftg-blog/2014/08/dotfiles-part-1/</link>
+      <pubDate>Tue, 12 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://ag4ve.github.io/sftg-blog/2014/08/dotfiles-part-1/</guid>
+      <description>&lt;p&gt;Lots of people put their dotfiles online. See:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://dotfiles.github.io/&#34;&gt;http://dotfiles.github.io/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://dotfiles.org/&#34;&gt;http://dotfiles.org/&lt;/a&gt;
+&lt;br&gt;&amp;hellip; and others?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Password on Straying from the Google-able</title>
+    <link>https://ag4ve.github.io/sftg-blog/categories/password/</link>
+    <description>Recent content in Password on Straying from the Google-able</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 20 Oct 2012 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ag4ve.github.io/sftg-blog/categories/password/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Password Schema</title>
+      <link>https://ag4ve.github.io/sftg-blog/2012/10/password-schema/</link>
+      <pubDate>Sat, 20 Oct 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://ag4ve.github.io/sftg-blog/2012/10/password-schema/</guid>
+      <description>&lt;p&gt;A while ago a friend told me that a phrase was better to use for a password than a bunch of jumbled characters. For instance, using &amp;ldquo;This is a secure password.&amp;rdquo; would &amp;ldquo;SD4#ac&amp;rdquo;. I didn&amp;rsquo;t believe him which started some email exchanges in which I basically proved myself wrong (with basic math). The following is what i found.
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
