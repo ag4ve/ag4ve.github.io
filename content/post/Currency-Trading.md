@@ -229,6 +229,7 @@ found to research coins are:
 *  https://www.worldcoinindex.com
 *  https://cryptomiso.com
 *  https://coinmarketcap.com
+*  https://nomics.com
 9. https://www.tradingview.com
 
 Youtube channels:
