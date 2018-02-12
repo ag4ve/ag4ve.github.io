@@ -11,7 +11,7 @@ thumbnailImagePosition: left
 thumbnailImage: //d1u9biwaxjngwg.cloudfront.net/highlighted-code-showcase/peak-140.jpg
 ---
 
-## Topic
+# Topic
 
 In early December (2017), I bought some ethereum, a week later I continued
 along this path (investing more money in this space). As a fairly
@@ -27,7 +27,7 @@ more smoothly.
 
 <!-- toc -->
 
-## Landscape / definitions
+# Landscape / definitions
 
 Crypto currencies are data on a blockchain that may not be spent twice.
 This data is linked to a wallet address (that hopefully only you have
@@ -68,7 +68,7 @@ This is generally bitcoin, but some exchanges use ethereum. Obviously
 exchanges that allow you to buy crypto currencies with your native
 currency have pairings with your native currency.
 
-## TL/dR
+# TL/dR
 
 My 30 second run down of recommendations:
 
@@ -86,7 +86,7 @@ a while for you to have access to your coin, so start with something
 somewhat stable). If your end goal is to get another coin, transfer what
 you bought to another exchange and trade into the currency you want.
 
-## Value
+# Value
 
 Anything someone will pay you for has value. I don't care if you want to
 call this "money" or "dirt" - enough people want this, than it obviously
@@ -105,22 +105,22 @@ decrease (and doesn't increase very much with mining) and the market cap
 will fluctuate, what changes isn't really the coins in the system, but
 what people are willing to pay for them.
 
-## Mess Ups
+# Mess Ups
 
 Before getting too far into this, I'm going to list the places I have
 personally messed up:
 
-### I invested in some hype
+## I invested in some hype
 
 I still haven't read the WeTrust or DigiByte whitepaper but still own some
 of them. That's just not smart.
 
-### I did not spread out my investments enough
+## I did not spread out my investments enough
 
 I bought Litecoin and split that investment out 4x ways - in hindsight, I
 should've split that out 10 ways with more research on the projects.
 
-### I got nervous dorring a process and kept going
+## I got nervous dorring a process and kept going
 
 When a process makes you nervous - stop. When I had to copy and paste a
 hash to a wallet that wasn't located on CoinBase and then tell CoinBase to
@@ -129,14 +129,14 @@ minutes since I used litecoin) I got a bit nervous. It was a bit late, so
 I should've just gone to bed at this point. I wanted to just buy into alt
 coins, so I spent time trying to make that happen - that was a mistake.
 
-### I sold low to buy stuff that was moving up (and I'm not a day trader)
+## I sold low to buy stuff that was moving up (and I'm not a day trader)
 
 If you think you need to sell low, think about that for at least a week
 (and figure out why it's low). It'd also be good for you to analyze why
 you made a bad decision (part of the reason for me writing this - my
 personal analysis :) ).
 
-### I should've started with a better investment plan
+## I should've started with a better investment plan
 
 I jumped in without really knowing about market cap, chart analysis /
 trends, dollar cost averate, etc. I'm guessing these are lessons everyone
@@ -160,7 +160,7 @@ for each fold it goes up.
 
 (Yes, this is roughly my plan - dollar values are off though)
 
-## Coulda Shoulda Woulda
+# Coulda Shoulda Woulda
 
 In retrospect - if I could start all over again (even though I'm 25% up
 after only a month (and now 25% down after almost 3x months) and with the
@@ -180,7 +180,7 @@ of these.
 make/loose more dispite these fees if you're an investor and not a day
 trader).
 
-## Exchanges
+# Exchanges
 
 The first pain point - getting crypto currency.
 
@@ -191,7 +191,7 @@ help you here.
 
 In the US, your choice here is CoinBase[1] (GDAX[2]) or Gemini[3].
 
-## Alt Coins
+# Alt Coins
 
 My definition of an alt coin is anything I can't directly buy with cash
 money. That being anything not on CoinBase or Gemini. So, anything that
@@ -220,10 +220,11 @@ ecosystem: CoinBase, Gemini, or Tether[4]. Tether is currently not
 allowing new accounts and is currently being investigated by the US Gov,
 and both CoinBase and Gemini have delays in registration or verification.
 
-## Coin info
+# Coin info
 
 Not all exchanges trade/have info on all coins. The best sources I've
 found to research coins are:
+
 1. https://www.coingecko.com
 *  https://www.worldcoinindex.com
 *  https://cryptomiso.com
@@ -231,13 +232,14 @@ found to research coins are:
 9. https://www.tradingview.com
 
 Youtube channels:
+
 1. DataDash: https://www.youtube.com/channel/UCCatR7nWbYrkVXdxXb4cGXw
 *  Coin Mastery: https://www.youtube.com/channel/UC4nXWTjZqK4bv7feoRntSog
 9. Altcoin Buzz: https://www.youtube.com/channel/UCGyqEtcGQQtXyUwvcy7Gmyg
 
 (Yes, there are other resources - these are the ones I use the most)
 
-## Know Yourself
+# Know Yourself
 
 This is new tech, and a pretty volitile market - a coworker bought some
 bitcoin and saw it drop 40% before he could even use it (the bank transfer
@@ -250,7 +252,7 @@ However, if you don't /think/ you'll be ok with this, you probably don't
 want to jump in. If, however, you think you may be ok with watching this
 with a front row seat, by all means, jump in.
 
-## Know Your Tech
+# Know Your Tech
 
 Most coins have whitepapers behind the project (and if they don't, you
 probably don't want to invest in them). Most of these whitepapers don't
@@ -282,7 +284,7 @@ yourself) explaining why you feel this way before doing so. Generally,
 given how markets tend to bounce around (especially these), I'd argue
 you're probably wrong, and you can wait a few days and read up first.
 
-## Protocols vs tokens and forks
+# Protocols vs tokens and forks
 
 Most of the coins are tokens and a vast majority of the remainder are
 forks of older protocols. What's the difference?
@@ -298,7 +300,7 @@ A fork is a copy of an existing protocol and may have modifications. Such
 as Litecoin, Bitcoin Cash, or DigiByte. And ethereum and ethereum classic
 are forks of each other (lots of politics there).
 
-## Security
+# Security
 
 This tech is quite secure (there's a half trillion dollars at your hands
 if you can prove otherwise :) ). Yes, parts of this field will have bugs -
@@ -316,7 +318,7 @@ peraonally decided to mitigate the risk of an exchange getting hacked by
 splitting up my "money" between multiple exchanges. And for long term
 holds, they go into a wallet.
 
-## Business Case to Hacking an Exchange
+# Business Case to Hacking an Exchange
 
 Lets say I run an exchange. I keep up to date with the security landscape
 and patching and have code reviews and pentests (both internal and
@@ -334,7 +336,7 @@ current market cap). Doesn't seem like a bad deal to you, does it?
 End result - your exchange will get hacked. It will happen multiple times.
 You may get your money/coin back, they may go out of business.
 
-## My Personal Security
+# My Personal Security
 
 * I don't store coin on any site that doesn't offer Google Authenticator
 (ie, Gemini supports a different app, and I won't leave money on their
@@ -345,7 +347,7 @@ unlock those passwords [8]. And I don't know any passwords for any sites I
 have private information on (including exchanges).
 * I keep my coins on multiple exchanges.
 
-## What I Recommend Everyone Do
+# What I Recommend Everyone Do
 
 * Don't trust any site that limits your 2FA to cellular text messages (use
 Google Authenticator - other apps in this space as well - I just don't
@@ -362,7 +364,7 @@ If you're only going to listen to one of those todo's - USE A PASSWORD
 MANAGER. To put a finer point on this - if you don't use a password manager
 DON'T get into this space.
 
-## Trading
+# Trading
 
 * Find an app you can use to track your trades with (it's so painful to
 calculate how many btc/eth something is worth and than how many of your
@@ -374,11 +376,11 @@ here"). This way you can see whether you were right or wrong about the
 coin at the time you were considering it (obviously markets change - you
 should reevaluate at the point of buying).
 
-## Taxes
+# Taxes
 
 Who knows / we'll see. If you know, I want to talk :)
 
-## The future
+# The future
 
 At the time of writing, there's lots of work that needs to be done. I'll
 lay out the biggest warts I see:
