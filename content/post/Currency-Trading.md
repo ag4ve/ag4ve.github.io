@@ -274,9 +274,9 @@ supposed to hit CoinBase, so I'm /ok/ in putting something in it (and
 everyone else believes the same thing, so it's gone up - I'll probably get
 some more after I read their whitepaper too).
 
-* My views on Ripple have changed - I'm holding what I have, but think
+<sub>My views on Ripple have changed - I'm holding what I have, but think
 Stellar may be/do better. RippleNet doesn't require their tokens, so I
-don't see the value in them.
+don't see the value in them.</sub>
 
 If you feel that a coin is going to go up over night, and feel the need to
 invest in it *now* because of that, write a paragraph (an email to
