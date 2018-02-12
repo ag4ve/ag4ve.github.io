@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blockchain on Straying from the Google-able</title>
+    <link>https://ag4ve.github.io/sftg-blog/categories/blockchain/</link>
+    <description>Recent content in Blockchain on Straying from the Google-able</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 26 Dec 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ag4ve.github.io/sftg-blog/categories/blockchain/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Currency Trading</title>
+      <link>https://ag4ve.github.io/sftg-blog/2017/12/currency-trading/</link>
+      <pubDate>Tue, 26 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ag4ve.github.io/sftg-blog/2017/12/currency-trading/</guid>
+      <description>&lt;h2 id=&#34;topic&#34;&gt;Topic&lt;/h2&gt;
+
+&lt;p&gt;In early December (2017), I bought some ethereum, a week later I continued
+along this path (investing more money in this space). As a fairly
+technical computer user, I have experienced some pain points in this
+space.
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

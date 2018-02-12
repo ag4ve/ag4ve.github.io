@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://ag4ve.github.io/sftg-blog/2017/12/currency-trading/</loc>
+    <lastmod>2017-12-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ag4ve.github.io/sftg-blog/2017/10/finding-a-host/</loc>
     <lastmod>2017-10-22T00:00:00+00:00</lastmod>
   </url>
@@ -55,6 +60,12 @@
   </url>
   
   <url>
+    <loc>https://ag4ve.github.io/sftg-blog/categories/blockchain/</loc>
+    <lastmod>2017-12-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ag4ve.github.io/sftg-blog/categories/</loc>
     <lastmod>2015-11-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -74,7 +85,7 @@
   
   <url>
     <loc>https://ag4ve.github.io/sftg-blog/tags/github-theme/</loc>
-    <lastmod>2017-10-22T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -110,7 +121,7 @@
   
   <url>
     <loc>https://ag4ve.github.io/sftg-blog/post/</loc>
-    <lastmod>2017-10-22T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -128,7 +139,7 @@
   
   <url>
     <loc>https://ag4ve.github.io/sftg-blog/categories/security/</loc>
-    <lastmod>2017-02-07T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -140,19 +151,19 @@
   
   <url>
     <loc>https://ag4ve.github.io/sftg-blog/</loc>
-    <lastmod>2017-10-22T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ag4ve.github.io/sftg-blog/tags/</loc>
-    <lastmod>2017-10-22T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ag4ve.github.io/sftg-blog/tags/test/</loc>
-    <lastmod>2017-10-22T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
