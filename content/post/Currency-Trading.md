@@ -13,7 +13,7 @@ thumbnailImage: //d1u9biwaxjngwg.cloudfront.net/highlighted-code-showcase/peak-1
 
 # Topic
 
-In early December (2017), I bought some ethereum, a week later I continued
+In early December (2017), I bought some Ethereum, a week later I continued
 along this path (investing more money in this space). As a fairly
 technical computer user, I have experienced some pain points in this
 space.
@@ -43,8 +43,8 @@ from one exchange to another.
 Market cap is the worth in normal (fiat) currency of the whole market.
 This can be determined by multiplying coins in circulation by the last
 completed transaction for USD/EUR/YUN/etc (if the coin is only traded in
-bitcoin or ethereum, you'd have to determine the number of ethereum or
-bitcoin all of that particular coin is worth and then convert that). After
+Bitcoin or Ethereum, you'd have to determine the number of Ethereum or
+Bitcoin all of that particular coin is worth and then convert that). After
 this is done for all coins, you add these values together - this is your
 market cap.
 
@@ -64,11 +64,11 @@ of stake (PoS) which allows people to get more of a vote on whether a
 transaction is valid based on the coins they hold (basically).
 
 Pairings are the coins exchanges use to trade in and out of other coins.
-This is generally bitcoin, but some exchanges use ethereum. Obviously
+This is generally Bitcoin, but some exchanges use Ethereum. Obviously
 exchanges that allow you to buy crypto currencies with your native
 currency have pairings with your native currency.
 
-# TL/dR
+# TL;DR
 
 My 30 second run down of recommendations:
 
@@ -185,7 +185,7 @@ trader).
 The first pain point - getting crypto currency.
 
 Services exist to exchange dollars for crypto currency (generally just
-bitcoin and ethereum - I call them "on ramp exchanges"). From that point,
+Bitcoin and Ethereum - I call them "on ramp exchanges"). From that point,
 you can exchange these coins for other currencies. Your bank *will not*
 help you here.
 
@@ -209,10 +209,10 @@ said, Bitcoin Cash was worth ~$2500 before CoinBase released it - some
 people got $4800 sales of it processed. It is now worth ~$3000 (and now
 1300).
 
-My "safe bet" in this space is ethereum (bar none - businesses are based
-on their smart contracts - if ethereum dies, tons of businesses die - that 
+My "safe bet" in this space is Ethereum (bar none - businesses are based
+on their smart contracts - if Ethereum dies, tons of businesses die - that 
 to me is the definition of a "safe bet" in this space). That said, if you 
-want a bit more fluctuation in your bets, use your bitcoin or ethereum to 
+want a bit more fluctuation in your bets, use your Bitcoin or Ethereum to 
 buy other coins using crypto currency exchange.
 
 Note: For a US customers, there are three ways to get money into this
@@ -242,7 +242,7 @@ Youtube channels:
 # Know Yourself
 
 This is new tech, and a pretty volitile market - a coworker bought some
-bitcoin and saw it drop 40% before he could even use it (the bank transfer
+Bitcoin and saw it drop 40% before he could even use it (the bank transfer
 hadn't gone through yet) - this will happen again. I want to say "if
 you're not confortable with", but there's only one way to really know if
 you're ok with loosing half of the value you have in a market and that's
@@ -290,21 +290,21 @@ Most of the coins are tokens and a vast majority of the remainder are
 forks of older protocols. What's the difference?
 
 A protocol is a coin that uses a unique set of nodes to process it. This
-is like bitcoin or ethereum.
+is like Bitcoin or Ethereum.
 
 A token is a coin that is built on top of a protocol, they will have
 something called a "smart contract". Such as Power Ledger, TenX, or
 Humaniq.
 
 A fork is a copy of an existing protocol and may have modifications. Such
-as Litecoin, Bitcoin Cash, or DigiByte. And ethereum and ethereum classic
+as Litecoin, Bitcoin Cash, or DigiByte. And Ethereum and Ethereum classic
 are forks of each other (lots of politics there).
 
 # Security
 
 This tech is quite secure (there's a half trillion dollars at your hands
 if you can prove otherwise :) ). Yes, parts of this field will have bugs -
-see the ethereum DAO bug for a prime example. There will be lots more bugs
+see the Ethereum DAO bug for a prime example. There will be lots more bugs
 with smart contracts, secure tokens leaking information, and oracles
 getting owned (maybe even injection attacks here - who knows?). However, I
 doubt this is going to be the main issue in this space for a long time to
@@ -385,9 +385,9 @@ Who knows / we'll see. If you know, I want to talk :)
 At the time of writing, there's lots of work that needs to be done. I'll
 lay out the biggest warts I see:
 
-* Pairing - most exchanges use bitcoin to trade with. Other than volume,
-there's no reason to only pair with bitcoin. Pairings need to expand
-massively, mainly because bitcoin generally seems to determine the value
+* Pairing - most exchanges use Bitcoin to trade with. Other than volume,
+there's no reason to only pair with Bitcoin. Pairings need to expand
+massively, mainly because Bitcoin generally seems to determine the value
 of everything else, long term this isn't healthy. Along the same lines,
 more exchanges need to accept native (fiat) currencies.
 * Regulation / taxation - currently this is in a bit of a limbo. There
