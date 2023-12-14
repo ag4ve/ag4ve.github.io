@@ -1,19 +1,17 @@
 ---
+pin: false
+layout: post
 title: "Open Source Mobile Communication"                                       
 date: 2012-10-23
 categories:                                         
-  - idea
+  - mobile
 tags:
-  - test
-thumbnailImagePosition: left
-thumbnailImage: //d1u9biwaxjngwg.cloudfront.net/highlighted-code-showcase/peak-140.jpg
+  - idea
+image:
+  path: //d1u9biwaxjngwg.cloudfront.net/highlighted-code-showcase/peak-140.jpg
 ---
 
-[Draft]
-
 I've been thinking about this for a year now. The idea was probably spawned from T-Mobile providing a wireless router that you could use your phone to make calls through and then given more life with the emergence of everyone else providing femtocells.
-
-<!--more-->
 
 What's the idea? Well, it goes something like this: Why am I paying $400  for a computer I have limited access to and $100+ to have access to a network that provides limited functionality?
 

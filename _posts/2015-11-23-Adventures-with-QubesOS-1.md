@@ -1,24 +1,22 @@
 ---
-title: "Adventures in QubesOS (part 1)"                                       
+pin: true
+layout: post
+title: "Adventures in QubesOS (part 1)"
 date: 2015-11-23
-categories:                                         
+categories:
+  - qubes
+  - os
+tags:
   - security
   - anaconda
-  - qubes
-tags:
-  - highlight code
-  - github theme
-  - test
-thumbnailImagePosition: left
-thumbnailImage: //d1u9biwaxjngwg.cloudfront.net/highlighted-code-showcase/peak-140.jpg
+  - luks
+image:
+  path: //d1u9biwaxjngwg.cloudfront.net/highlighted-code-showcase/peak-140.jpg
 ---
-
-<!-- toc -->
 
 # Qubes Install
 
 I'm mainly writing this so that I don't forget. The installer for Redhat/Fedora/Qubes (Anaconda) doesn't do well when you try to do an unusual partition scheme. How unusual? Lets go with:
-<!--more-->
 * mdadm raid for everything
 * luks encrypted root and swap
 * provision an efi secure boot partition (Qubes doesn't currently support this)
@@ -39,7 +37,7 @@ Inside LUKS:
 
 ## Lets begin:
 
-{{< codeblock "gdisk.out" "bash" >}}
+```console
  # gdisk /dev/sda
  Go into expert mode (x) and set the start block to 34 and exit expert mode (m)
  Create the boot loader partition: n, start is 34 end is 2047, type is EF02 [1]
@@ -48,16 +46,18 @@ Inside LUKS:
  Create user space partition: n, default start, to the end of the disk, type FD00
  (There's a sort (s) option if you did these out of order and want the partition number relative to where it is physically on the disk)
  Write the data: w
-{{< /codeblock >}}
+```
+{: file="gdisk.out" }
 
 Note: this is documented more [1]
 
 ## Backup and copy the partition table:
 
-{{< codeblock "part-copy.out" "bash" >}}
+```console
  # sgdisk --backup=table /dev/sda
  # for i in b c d; do sgdisk --load-backup=table /dev/sd$i ; done
-{{< /codeblock >}}
+```
+{: file="part-copy.out" }
 
 I then went back in to gdisk for each of the disks and changed the EFI partition's name (#2 for me) to "ESB <disk number>" as I figured when using efibootmgr's -L, a common name might confuse things (or just error). Maybe I'm wrong - I don't know yet. [2]
 
@@ -91,46 +91,51 @@ After it is finished building your second raid device, think up a nice long pass
 
 ## Create and open a LUKS system (no reference):
 
-{{< codeblock "luks-format.out" "bash" >}}
+```console
  # cryptsetup luksFormat /dev/md1
  # cryptsetup luksOpen /dev/md1 main
-{{< /codeblock >}}
+```
+{: file="luks-format.out" }
 
 ## Create LVM on top of that [2]:
 
-{{< codeblock "lvm-create.out" "bash" >}}
+```console
  # pvcreate /dev/mapper/main
  # vgcreate Main /dev/mapper/main
  # lvcreate -L 32G Main -n swap
  # lvcreat -L 20G Main -n dom0
-{{< /codeblock >}}
+```
+{: file="lvm-create.out" }
 
 Note: sizes may vary - this is what I did for Qubes (not sure I needed that much swap though). So if this is for a larger OS, 20G might not be what you want.
 
 ## Create filesystems:
 
-{{< codeblock "mke2fs.out" "bash" >}}
+```console
  # mkfs.ext4 /dev/mapper/dom0
  # mkswap /dev/mapper/swap
-{{< /codeblock >}}
+```
+{: file="mke2fs.out" }
 
 ## Close everything up:
 
-{{< codeblock "cleanup.out" "bash" >}}
+```console
  # vgchange -a n Main
  # cryptsetup luksClose main
  # mdadm --stop /dev/md1
  # mdadm --stop /dev/md0
-{{< /codeblock >}}
+```
+{: file="cleanup.out" }
 
 Reboot into the Qubes (or Redhat/Fedora) installer. Assign "0" to /boot and ESB 1 to /boot/efi. Unlock LUKS, you'll see  your two LVM volumes - assign swap to be swap space and dom0 to be /. And install.
 
 ## Links
 
+0. https://www.thomas-krenn.com/en/wiki/Mdadm_recovery_and_resync
+
+References:
 1. https://wiki.archlinux.org/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions
-<br>See the text below the note part.
-* http://askubuntu.com/questions/660023/how-to-install-ubuntu-14-04-64-bit-with-a-dual-boot-raid-1-partition-on-an-uefi/660038
-9. https://www.thomas-krenn.com/en/wiki/Mdadm_recovery_and_resync
+2. http://askubuntu.com/questions/660023/how-to-install-ubuntu-14-04-64-bit-with-a-dual-boot-raid-1-partition-on-an-uefi/660038
 
 
 [1]: https://wiki.archlinux.org/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions

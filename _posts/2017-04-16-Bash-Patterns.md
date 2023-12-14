@@ -1,27 +1,27 @@
 ---
+pin: true
+layout: post
 title: "Bash Patterns"                                       
 date: 2017-04-16
 categories:                                         
   - bash
-  - code
   - script
 tags:
-  - highlight code
-  - github theme
-  - test
-thumbnailImagePosition: left
-thumbnailImage: //d1u9biwaxjngwg.cloudfront.net/highlighted-code-showcase/peak-140.jpg
+  - code
+  - script
+image:
+  path: /static/img/The.Matrix.glmatrix.2.png
 ---
 
-<b>Audience</b>: I assume some prior Unix command line experience
+### Audience
 
-<b>Note</b>: I've done much more work to the slide deck that derrived from this post and have found some errors in this post along the way that I haven't gotten around to fixing. Until I do, I'd recommend referring to my [presentation slides](https://ag4ve.github.io/bash-patterns/#/).
+I assume some prior Unix command line experience
+
+### Note
+
+I've done much more work to the slide deck that derrived from this post and have found some errors in this post along the way that I haven't gotten around to fixing. Until I do, I'd recommend referring to my [presentation slides](https://ag4ve.github.io/bash-patterns/#/).
 
 I keep running into "bash scripts" that look like old style shell scripts - capitalized variable names, tons of subshells piping all over the place, etc. This does not need to be the case - bash scripts can be written with some elegance.
-
-<!--more-->
-
-<!-- toc -->
 
 # Bash Patterns
 
@@ -31,114 +31,129 @@ There are some design patterns that I think may help in this effort (and may als
 
 First, in bash, most things have a help document:
 
-{{< codeblock "help help" "bash" >}}
- [swilson@localhost ~]$ help help | head -4
- help: help [-dms] [pattern ...]
-     Display information about builtin commands.
-  
-     Displays brief summaries of builtin commands.  If PATTERN is
-{{< /codeblock >}}
+```console
+[swilson@localhost ~]$ help help | head -4
+help: help [-dms] [pattern ...]
+    Display information about builtin commands.
+ 
+    Displays brief summaries of builtin commands.  If PATTERN is
+```
+{: file="help help" }
 
-{{< codeblock "test help" "bash" >}}
+```console
 [swilson@localhost ~]$ help [ | head -4
 [: [ arg... ]
     Evaluate conditional expression.
    
     This is a synonym for the "test" builtin, but the last argument must
-{{< /codeblock >}}
+```
+{: file="test help" }
 
-{{< codeblock "new test help" "bash" >}}
+```console
 [swilson@localhost ~]$ help [[ | head -4
 [[ ... ]]: [[ expression ]]
     Execute conditional command.
    
     Returns a status of 0 or 1 depending on the evaluation of the conditional
-{{< /codeblock >}}
+```
+{: file="new test help" }
 
-{{< codeblock "declare help" "bash" >}}
+```console
 swilson@localhost ~]$ help declare | head -4
 declare: declare [-aAfFgilnrtux] [-p] [name[=value] ...]
     Set variable values and attributes.
    
     Declare variables and give them attributes.  If no NAMEs are given,
-{{< /codeblock >}}
+```
+{: file="declare help" }
 
-{{< codeblock "set help" "bash" >}}
+```console
 [swilson@localhost ~]$ help set | head -4
 set: set [-abefhkmnptuvxBCHP] [-o option-name] [--] [arg ...]
     Set or unset values of shell options and positional parameters.
    
     Change the value of shell attributes and positional parameters, or
-{{< /codeblock >}}
+```
+{: file="set help" }
 
-{{< codeblock "enable help" "bash" >}}
+```console
 [swilson@localhost ~]$ help enable | head -4
 enable: enable [-a] [-dnps] [-f filename] [name ...]
     Enable and disable shell builtins.
    
     Enables and disables builtin shell commands.  Disabling allows you to
-{{< /codeblock >}}
+```
+{: file="enable help" }
 
 These documents are generally about a page long and do not go through a pager so may scroll.
 
 Note: [ is also an executable command on most Unix systems - bash will use the internal [, but it's good to realize that it's there:
 
-{{< codeblock "whereis test command" "basah" >}}
+```console
 [swilson@localhost temp]$ whereis [
 [: /usr/bin/[ /usr/share/man/man1/[.1.gz
-{{< /codeblock >}}
+```
+{: file="whereis test command" }
 
 ## Variable expansion and itteration
 
 I so often see things like:
-
-> for i in $(seq 0 5); do ...; done
+```
+for i in $(seq 0 5); do ...; done
+```
 
 in scripts. Not only is creating a subshell costly, but it's extra typing, extra reading, and just looks ugly. Bash will expand variables for you:
-
-> echo {0..5}
+```
+echo {0..5}
+```
 
 or:
-
-> for i in {0..5}; do ...; done
+```
+for i in {0..5}; do ...; done
+```
 
 But it gets better. Say you notice a host computer3.example.com and you wonder if that means there are also computer1.example.com, computer2.example.com, etc. This is trivial to check:
-
-> dig computer{1..5}.example.com
+```console
+$ dig computer{1..5}.example.com
+```
 
 As the whole word is expanded out with each itteration. Such as:
 
-{{< codeblock "word expansion" "basah" >}}
+```console
 [swilson@localhost ~]$ echo foo{0..5}
 foo0 foo1 foo2 foo3 foo4 foo5
-{{< /codeblock >}}
+```
+{: file="word expansion" }
 
 However, maybe you're saying that seq allows you to itterate over only even numbers and that's why you prefer it and that I can't do that here? Well you'd be almost right:
 
-{{< codeblock "c style for" "basah" >}}
+```console
 [swilson@localhost ~]$ for ((i = 0; i <= 10; i+=2)); do echo -n "$i "; done; echo
 0 2 4 6 8 10
-{{< /codeblock >}}
+```
+{: file="c style for" }
 
 ## Math
 
 That last example brings up a point - modern bash can handle anything that the expr command can:
 
-{{< codeblock "math" "basah" >}}
+```console
 [swilson@localhost ~]$ echo $((5 % 2))
 1
 [swilson@localhost ~]$ echo $((5 / 2))
 2
 [swilson@localhost ~]$ echo $((5**2))
 25
-{{< /codeblock >}}
+```
+{: file="math" }
 
 And then some:
 
-{{< codeblock "more math" "basah" >}}
+```console
 [swilson@localhost ~]$ echo $(( (5**2) < 30 ))
 1
-{{< /codeblock >}}
+```
+{: file="more math" }
 
 ## Command test
 
@@ -146,38 +161,43 @@ Determining if a command is installed:
 
 When writing a script meant for someone else to run, it's generally smart to determine if a command is installed. To do this, you want something like this:
 
-{{< codeblock "command exists" "basah" >}}
+```console
 if ! command -v printf >/dev/null 2>&1; then
   echo "We can not find the bash printf command" >&2
   exit 1
 fi
-{{< /codeblock >}}
+```
+{: file="command exists" }
 
 Eventually you may even want to create a "die" function, as typing that again and again can get a bit repetative (see mon-hosts linked at the bottom for an example of what this function may look like).
 
 ## Reading files as input
 
 If you are writing a script and want to have a config file, just source another file and use those variables like:
-
-> source ~/.config/file >/dev/null 2>&1
+```
+source ~/.config/file >/dev/null 2>&1
+```
 
 I only have to redirect STDERR so that I don't show an error message if the sourced file doesn't exist (I don't need to check for it first if I do this), but just in case someone does something weird in the config file, might as well redirect STDOUT too.
 
 Note: calling it a config file makes no difference to bash - it executes it just like any other script. This means, you should treat any config file you source as executable. In other words, if you put this in a config file you source:
-
-> FOO=$(rm -rf /*)
+```
+FOO=$(rm -rf /*)
+```
 
 You will loose data and store the results of your lost system in $FOO. Or to demo this:
 
-> [swilson@localhost temp]$ echo "echo foo" > sourced
-> [swilson@localhost temp]$ source ./sourced
-> foo
+```console
+[swilson@localhost temp]$ echo "echo foo" > sourced
+[swilson@localhost temp]$ source ./sourced
+foo
+```
 
 ### CSV Manipulation
 
 Within a script, if you need other file data, you can do this:
 
-{{< codeblock "reading csv" "basah" >}}
+```console
 [swilson@localhost temp]$ echo $(< foo.csv)
 foo,bar,baz aaa,bbb,ccc
 [swilson@localhost temp]$ echo "$(< foo.csv)"
@@ -186,32 +206,36 @@ aaa,bbb,ccc
 [swilson@localhost temp]$ mapfile -t -c 1 -C 'echo $@' < foo.csv
 0 foo,bar,baz
 1 aaa,bbb,ccc
-{{< /codeblock >}}
+```
+{: file="reading csv" }
 
 The first two can be used to define a variable, and the later can be used to run each line through a function, which is the same as:
 
-{{< codeblock "reading a csv file" "basah" >}}
+```console
 [swilson@localhost temp]$ while read line; do echo $line; done < foo.csv
 foo,bar,baz
 aaa,bbb,ccc
-{{< /codeblock >}}
+```
+{: file="reading a csv file" }
 
 Though mapfile has options to start from a line, how many lines to read per function call, etc which while doesn't really provide.
 
 We can also easily manipulate a *simple* csv file with either while or mapfile (I'll demonstrate while):
 
-{{< codeblock "manipulate csv" "basah" >}}
+```console
 [swilson@localhost temp]$ while IFS="," read -a data; do echo "${data[0]}"; done < foo.csv
 foo
 aaa
-{{< /codeblock >}}
+'''
+{: file="manipulate csv" }
 
 Or directly from a string:
 
-{{< codeblock "manipulate csv string" "basah" >}}
+```console
 [swilson@localhost temp]$ while IFS="," read -a data; do echo "${data[0]}"; done <<< "aaa,bbb,ccc"
 aaa
-{{< /codeblock >}}
+```
+{: file="manipulate csv string"}
 
 ## Sane defaults
 
@@ -220,66 +244,74 @@ After you're done looking through a config file (but before you take command lin
 > [[ -z foo ]] && foo="something"
 
 But this is way too much typing and not very elegant. Instead, try:
+```
+: "${foo:="something"}"
+```
 
-> : "${foo:="something"}"
-
-This is similar to the ||= or //= operator from other languages
+This is similar to the `||=` or `//=` operator from other languages
 
 Defining non-printable characters
 
 Normally, I only need to define a newline character to be inserted in the middle of a string, such as:
-
-> nl=$'\n'
+```
+nl=$'\n'
+```
 
 However, this same method can be used to define/print whatever character you want:
 
-{{< codeblock "fuzzing" "basah" >}}
+```console
 [swilson@localhost temp]$ for i in {0..255}; do eval "echo -n $'\x$i'"; done; echo
          !"#$%&'()0123456789@ABCDEFGHIPQRSTUVWXY`abcdefghipqrstuvwxy0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789 0 1 2 3 4 5 6 7 8 9!0!1!2!3!4!5!6!7!8!9"0"1"2"3"4"5"6"7"8"9#0#1#2#3#4#5#6#7#8#9$0$1$2$3$4$5$6$7$8$9%0%1%2%3%4%5
-{{< /codeblock >}}
+```
+{: file="fuzzing" }
 
 ## Variable manipulation and commands
 
 Since version 3 (IIRC) bash has had support for basic arrays. These are quite simple to use and pretty powerful. Either
-
-> declare -a foo
+```
+declare -a foo
+```
 
 or just:
-
-> foo=(aaa bbb ccc)
+```
+foo=(aaa bbb ccc)
+```
 
 You can also manipulate arrays with globs, such as:
 
-{{< codeblock "alter an array" "basah" >}}
+```console
 [swilson@localhost temp]$ echo "${foo[@]/a/A}"
 Aaa bbb ccc
 [swilson@localhost temp]$ echo "${foo[@]/a*/A}"
 A bbb ccc
 [swilson@localhost temp]$ echo "${foo[@]/#a/A}"
 Aaa bbb ccc
-{{< /codeblock >}}
+```
+{: file="alter an array" }
 
 Or evaluate the array as a string and manipulate the whole thing:
 
-{{< codeblock "array in a command" "basah" >}}
+```console
 [swilson@localhost temp]$ foo=(l h)
 [swilson@localhost temp]$ ls ${foo/#/-}
 total 8
 -rw-rw-r--. 1 swilson swilson  24 Apr 10 18:56 foo.csv
 -rwxrwxr-x. 1 swilson swilson 601 Apr 10 19:45 t.sh
-{{< /codeblock >}}
+```
+{: file="array in a command" }
 
 It should be apparent at this point that any array may be passed as a parameter to any program, or even be used as a whole to execute something. It should also be noted that, because of this, any unquoted variable should probably be treated with the same care as an eval statement. (Caveat: variables in [[...]] and ((...}} are treated like a variable and are not used to run commands)
 
 You can also easily check whether an element exists in an array by using the same general princible of evaluating it as a string:
 
-{{< codeblock "string in array" "basah" >}}
+```console
 [swilson@localhost temp]$ foo=(aaa bbb ccc)
 [swilson@localhost temp]$ [[ " ${foo[@]} " =~ " bbb " ]] && echo ok
 ok
 [swilson@localhost temp]$ [[ " ${foo[@]} " =~ " eee " ]] && echo ok
 [swilson@localhost temp]$
-{{< /codeblock >}}
+```
+{: file="string in array" }
 
 ## Functions
 
@@ -289,12 +321,13 @@ Functions are awesome (and present in bash) and not utilized as much as they sho
 
 A function has lot more power
 
-{{< codeblock "long dig function" "basah" >}}
- # long dig
- ldig () {
-   dig +trace +nocmd "$@" any +multiline +answer
- }
-{{< /codeblock >}}
+```shell
+# long dig
+ldig () {
+  dig +trace +nocmd "$@" any +multiline +answer
+}
+```
+{: file="long dig function" }
 
 As parameters go in the middle of the parameters instead of to one side or the other.
 
@@ -302,62 +335,68 @@ It's also worth noting that you can't get around using an alias on the command l
 
 Or lets say I want to run some fancy logic as sudo or with ssh on a remote machine. Handling quoting here can be quite the pain. It also looks really dirty. There is, however an alternative:
 
-{{< codeblock "remote function" "basah" >}}
+```console
 [swilson@localhost temp]$ _f () { whoami; }
 [swilson@localhost temp]$ sudo bash -c "$(declare -f _f) && _f"
 root
 [swilson@localhost temp]$ _f () { groups $1; }
 [swilson@localhost temp]$ sudo bash -c "$(declare -f _f) && _f tuser"
 tuser : tuser
-{{< /codeblock >}}
+```
+{: file="remote function" }
 
 I can also pass in variables and the like using the same mechanism. The following comes from a consul-template script and shows passing a function along with a variable and writing output from that to a file.
 
-{{< codeblock "consul template snip" "basah" >}}
+```shell
 echo declare -A saveidx="'("$( \
-{{range tree (printf "/%s/%s" $env $prefix)}} \
-consul lock "$lockpath/{{.Key}}" "$(declare -f _autobs) && $(declare -p saveidx) && _autobs \"{{.Key}}\" \"{{.Value}}\" \"{{.ModifyIndex}}\"" & \
-{{end}}\
+  {{range tree (printf "/%s/%s" $env $prefix)}} \
+    consul lock "$lockpath/{{.Key}}" "$(declare -f _autobs) && $(declare -p saveidx) && _autobs \"{{.Key}}\" \"{{.Value}}\" \"{{.ModifyIndex}}\"" & \
+  {{end}}\
 )")'" > "$store"
-{{< /codeblock >}}
+```
+{: file="consul template snip" }
 
 You can also pass arrays to functions:
 
-{{< codeblock "variable reference" "basah" >}}
+```console
 [swilson@localhost temp]$ func () { echo "zero [${!0}] one [${!1}] two [${!2}] three [${!3}]"; }
 [swilson@localhost temp]$ func foo[@] i
 zero [] one [aaa bbb ccc] two [5] three []
-{{< /codeblock >}}
+```
+{: file="variable reference" }
 
 ### Data from functions
 
 As mentioned earlier, subshells are expensive (so try not to use them). In other words, don't do this:
 
-{{< codeblock "subshell" "basah" >}}
+```shell
 func () {
   echo "something"
 }
 foo=$(func)
-{{< /codeblock >}}
+```
+{: file="subshell" }
 
 Instead, because defining variables is pretty cheap, define global return variables for functions, either with:
 
-{{< codeblock "return variable" "basah" >}}
+```shell
 declare F_RET=""
 f () {
   F_RET=""
 
   ......
 }
-{{< /codeblock >}}
+```
+{: file="return variable" }
 
 or with newer bash, you can just do:
 
-{{< codeblock "new return variable" "basah" >}}
+```shell
 f () {
   declare -g F_RET=""
 }
-{{< /codeblock >}}
+```
+{: file="new return variable" }
 
 This also means you can return an array if you need to and do not need to worry about how to recompile a returned string into an array. As a side node, newer bash also allows you to declare an associative array (also known as a hash or dictionary or lookup table) with declare -A.
 
@@ -365,13 +404,14 @@ This also means you can return an array if you need to and do not need to worry 
 
 Functions can also be redefined on the fly, so:
 
-{{< codeblock "replace a function" "basah" >}}
- f () {
-   f {} {
-     echo "foo"
-   }
- }
-{{< /codeblock >}}
+```shell
+f () {
+  f {} {
+    echo "foo"
+  }
+}
+```
+{: file="replace a function" }
 
 Will only print something the second time you run the function. Though you could also always just call f at the end of the outer function.
 
@@ -379,21 +419,22 @@ Will only print something the second time you run the function. Though you could
 
 In a script, setting the 'e' and 'x' flag will show verbose output - this can also be set and unset at the beginning and end of a function, such as:
 
-{{< codeblock "set unset in function" "basah" >}}
- f () {
- 
-   set -ex
- 
-   ....
- 
-   set +ex
- 
- }
-{{< /codeblock >}}
+```shell
+f () {
+
+  set -ex
+
+  ....
+
+  set +ex
+
+}
+```
+{: file="set unset in function" }
 
 It is also good to realize that the same declare statement used to pass in variables and functions to a subshell may be used to show you what bash thinks the function or variable looks like as well:
 
-{{< codeblock "read declare" "basah" >}}
+```console
 [swilson@localhost temp]$ i=(aaa bbb ccc)
 [swilson@localhost temp]$ declare -p i
 declare -a i='([0]="aaa" [1]="bbb" [2]="ccc")'
@@ -403,7 +444,8 @@ f ()
 {
     echo
 }
-{{< /codeblock >}}
+```
+{: file="read declare" }
 
 ## Bonus
 
@@ -422,6 +464,6 @@ Published scripts
 
 A while ago I published two scripts that should highlight most of what I mentioned in here
 
-* [mon-hosts](https://www.korelogic.com/Resources/Tools/mon-hosts)
-* [tmux-start](https://www.korelogic.com/Resources/Tools/tmux-start.sh)
+* [mon-hosts](https://github.com/ag4ve/misc-scripts/blob/master/mon-hosts-packed)
+* [tmux-start](https://github.com/ag4ve/misc-scripts/blob/master/tmux-start.sh)
 

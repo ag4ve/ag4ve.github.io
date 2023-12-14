@@ -1,17 +1,22 @@
 ---
+pin: true
+layout: post
 title: "Password Schema"                                       
 date: 2012-10-20
 categories:                                         
-  - security
   - password
 tags:
-  - test
-thumbnailImagePosition: left
-thumbnailImage: //d1u9biwaxjngwg.cloudfront.net/highlighted-code-showcase/peak-140.jpg
+  - security
+image:
+  path: /static/img/Enigma_rotors_with_alphabet_rings.jpg
 ---
 
+> UPDATE 2023-12-13: This information isn't entirely acurate. Wordlists are generally used which skews this math. I'm leaving it up as the elementary theory is correct but please don't base any decisions on the below.
+{: .prompt-danger }
+
+-----
+
 A while ago a friend told me that a phrase was better to use for a password than a bunch of jumbled characters. For instance, using "This is a secure password." would "SD4#ac". I didn't believe him which started some email exchanges in which I basically proved myself wrong (with basic math). The following is what i found.
-<!--more-->
 
 First, the technical side of things - if the services you use (facebook, twitter, comcast, banks, universities computers, work systems, etc) store your passwords correctly, when they get compromised, most passwords over 9 characters aren't easily compromised (this is a time sensitive figure, so in future years this won't be an accurate number). The way that see [1] how someone can try to retrieve at your passwords after the hash has gone public.
 
