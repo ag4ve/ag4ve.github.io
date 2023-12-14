@@ -11,7 +11,7 @@ tags:
   - anaconda
   - luks
 image:
-  path: //d1u9biwaxjngwg.cloudfront.net/highlighted-code-showcase/peak-140.jpg
+  path: /static/img/Qubes_OS_ws_4-1-2.png
 ---
 
 # Qubes Install
