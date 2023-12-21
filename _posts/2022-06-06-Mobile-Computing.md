@@ -3,6 +3,7 @@ pin: true
 layout: post
 title: "Mobile Computing"                                       
 date: 2022-06-06
+author: shawn
 categories:                                         
   - mobile
 tags:

@@ -3,6 +3,7 @@ pin: true
 layout: post
 title: "Finding a host"                                       
 date: 2017-10-22
+author: shawn
 categories:                                         
   - osint
 tags:

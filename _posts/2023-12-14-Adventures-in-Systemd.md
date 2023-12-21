@@ -3,6 +3,7 @@ pin: true
 layout: post
 title: "Adventures in Systemd"
 date: 2023-12-14
+author: shawn
 categories:                                         
   - automation
 tags:

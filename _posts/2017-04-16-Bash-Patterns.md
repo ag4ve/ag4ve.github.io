@@ -3,6 +3,7 @@ pin: true
 layout: post
 title: "Bash Patterns"                                       
 date: 2017-04-16
+author: shawn
 categories:                                         
   - bash
   - script

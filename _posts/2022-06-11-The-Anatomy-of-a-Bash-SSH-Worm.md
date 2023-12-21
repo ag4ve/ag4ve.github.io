@@ -3,6 +3,7 @@ pin: true
 layout: post
 title: "The Anatomy of a Bash SSH Worm"                                       
 date: 2022-06-11
+author: shawn
 categories:                                         
   - automation
 tags:

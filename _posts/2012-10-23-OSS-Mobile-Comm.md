@@ -3,6 +3,7 @@ pin: false
 layout: post
 title: "Open Source Mobile Communication"                                       
 date: 2012-10-23
+author: shawn
 categories:                                         
   - mobile
 tags:

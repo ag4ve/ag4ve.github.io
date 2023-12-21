@@ -3,6 +3,7 @@ pin: true
 layout: post
 title: "Password Schema"                                       
 date: 2012-10-20
+author: shawn
 categories:                                         
   - password
 tags:

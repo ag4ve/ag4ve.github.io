@@ -3,6 +3,7 @@ pin: true
 layout: post
 title: "Ansible Debugging"
 date: 2022-08-07
+author: shawn
 categories:                                         
   - code
 tags:

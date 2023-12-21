@@ -3,6 +3,7 @@ pin: true
 layout: post
 title: "Yet Another SSH Blog"
 date: 2022-09-27
+author: shawn
 categories:                                         
   - shell
 tags:

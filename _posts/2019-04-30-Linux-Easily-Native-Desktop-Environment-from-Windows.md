@@ -3,6 +3,7 @@ pin: true
 layout: post
 title: "Linux Easily Native Desktop Environment from Windows"                                       
 date: 2019-04-30
+author: shawn
 categories:                                         
   - windows
 tags:

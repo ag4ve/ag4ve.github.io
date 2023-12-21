@@ -3,6 +3,7 @@ pin: true
 layout: post
 title: "Adventures in QubesOS (part 1)"
 date: 2015-11-23
+author: shawn
 categories:
   - qubes
   - os

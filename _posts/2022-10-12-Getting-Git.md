@@ -3,6 +3,7 @@ pin: true
 layout: post
 title: "Getting Git"
 date: 2022-10-12
+author: shawn
 categories:                                         
   - code
 tags:
