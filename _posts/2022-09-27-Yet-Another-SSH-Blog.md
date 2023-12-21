@@ -220,9 +220,9 @@ ucrowbar () {
 
 ## Resources
 
-- I’ve written about having a linux VirtualBox environment on Windows when using a smartcard to authenticate ssh with: [http://ag4ve.blogspot.com/2019/04/linux-easily-native-desktop-environment.html](http://ag4ve.blogspot.com/2019/04/linux-easily-native-desktop-environment.html)
+- I’ve written about having a linux VirtualBox environment on Windows when using a smartcard to authenticate ssh with: [https://ag4ve.blogspot.com/2019/04/linux-easily-native-desktop-environment.html](https://ag4ve.blogspot.com/2019/04/linux-easily-native-desktop-environment.html)
 
-- I’ve written about creating an ssh worm with bash: [http://ag4ve.blogspot.com/2022/06/the-anatomy-of-bash-ssh-worm.html](http://ag4ve.blogspot.com/2022/06/the-anatomy-of-bash-ssh-worm.html)
+- I’ve written about creating an ssh worm with bash: [https://ag4ve.blogspot.com/2022/06/the-anatomy-of-bash-ssh-worm.html](https://ag4ve.blogspot.com/2022/06/the-anatomy-of-bash-ssh-worm.html)
 
 - Mozilla has a great document on configuring a secure ssh server: [https://infosec.mozilla.org/guidelines/openssh](https://infosec.mozilla.org/guidelines/openssh)
 

@@ -349,11 +349,13 @@ tuser : tuser
 I can also pass in variables and the like using the same mechanism. The following comes from a consul-template script and shows passing a function along with a variable and writing output from that to a file.
 
 ```shell
+{% raw %}
 echo declare -A saveidx="'("$( \
   {{range tree (printf "/%s/%s" $env $prefix)}} \
     consul lock "$lockpath/{{.Key}}" "$(declare -f _autobs) && $(declare -p saveidx) && _autobs \"{{.Key}}\" \"{{.Value}}\" \"{{.ModifyIndex}}\"" & \
-  {{end}}\
+  {{end}} \
 )")'" > "$store"
+{% endraw %}
 ```
 {: file="consul template snip" }
 

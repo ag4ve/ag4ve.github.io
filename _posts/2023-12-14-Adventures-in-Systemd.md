@@ -34,7 +34,7 @@ $ systemctl cat test
 # /etc/systemd/system/test.service
 [Unit]
 Description=testing
-Documentation=test http://www.example.com
+Documentation=test https://www.example.com
 
 [Service]
 ExecStart=echo "systemd testing"
@@ -49,7 +49,7 @@ $ systemctl cat test
 # /etc/systemd/system/test.service
 [Unit]
 Description=testing
-Documentation=test http://www.example.com
+Documentation=test https://www.example.com
 
 [Service]
 ExecStart=echo "systemd testing"
@@ -171,7 +171,7 @@ $ systemctl cat test
 # /etc/systemd/system/test.service
 [Unit]
 Description=testing
-Documentation=test http://www.example.com
+Documentation=test https://www.example.com
 
 [Service]
 Type=simple
@@ -199,7 +199,7 @@ $ systemctl cat test*
 # /etc/systemd/system/test2.service
 [Unit]
 Description=testing 2
-Documentation=test2 http://www.example.com
+Documentation=test2 https://www.example.com
 
 [Service]
 Type=simple
@@ -209,7 +209,7 @@ ExecStart=echo test2
 # /etc/systemd/system/test.service
 [Unit]
 Description=testing
-Documentation=test http://www.example.com
+Documentation=test https://www.example.com
 After=test2.service
 Requires=test2.service
  
@@ -226,7 +226,7 @@ $ systemctl cat test2
 # /etc/systemd/system/test2.service
 [Unit]
 Description=testing 2
-Documentation=test2 http://www.example.com
+Documentation=test2 https://www.example.com
 BindsTo=test.service
 
 [Service]
@@ -249,7 +249,7 @@ $ systemctl cat test2
 # /etc/systemd/system/test2.service
 [Unit]
 Description=testing 2
-Documentation=test2 http://www.example.com
+Documentation=test2 https://www.example.com
 
 [Service]
 Type=simple
@@ -273,7 +273,7 @@ $ systemctl cat test.path
 # /etc/systemd/system/test.path
 [Unit]
 Description=testing
-Documentation=test http://www.example.com
+Documentation=test https://www.example.com
 
 [Path]
 PathModified=/root/foo

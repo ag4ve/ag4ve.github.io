@@ -76,12 +76,12 @@ Lastly, what type of attack are you thwarting? When your bank, or power company,
 We all know that most people use the same passwords fur multiple accounts, so the theory is if you have an account on one system that is hacked and the password is retrieved from a password dump, they'll be able to get data (or do other malicious things) from your other accounts. By making a password no one can grab with standard attacks against a password hash, you insure they can't login to your account from the place that was just hacked. You also insure that if you did use the same password on many accounts, you won't have to run around changing the password (if you even remember which sites you used that password on in the first place). Last, this schema allows you to easily remember different passwords on different sites so that none of these are issues for you.
 
 1. How I'd go about cracking passwords:<br>
-http://blog.thireus.com/cracking-story-how-i-cracked-over-122-million-sha1-and-md5-hashed-passwords
+https://blog.thireus.com/cracking-story-how-i-cracked-over-122-million-sha1-and-md5-hashed-passwords
 
 2. If you care about how to run through password hash quicker:<br>
-http://www.pwcrack.com/rainbowtables.shtml
+https://www.pwcrack.com/rainbowtables.shtml
 
 3. This xkcd was pointed out to me (though I think it is sorta wrong on the math): <br>
-http://xkcd.com/936/
+https://xkcd.com/936/
 
-[ I gave this as a live demo talk at HacDC's Cryptoparty (http://www.cryptoparty.org/wiki/Washington,_DC) and I figured it would be good in print form ]
+[ I gave this as a live demo talk at HacDC's Cryptoparty (https://www.cryptoparty.org/wiki/Washington,_DC) and I figured it would be good in print form ]
