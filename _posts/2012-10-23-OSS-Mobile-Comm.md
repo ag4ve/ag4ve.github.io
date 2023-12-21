@@ -8,7 +8,7 @@ categories:
 tags:
   - idea
 image:
-  path: //d1u9biwaxjngwg.cloudfront.net/highlighted-code-showcase/peak-140.jpg
+  path: /static/img/Anti_5g_conspiracy_sticker_luxembourg.jpg
 ---
 
 I've been thinking about this for a year now. The idea was probably spawned from T-Mobile providing a wireless router that you could use your phone to make calls through and then given more life with the emergence of everyone else providing femtocells.
