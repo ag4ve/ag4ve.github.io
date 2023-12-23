@@ -25,9 +25,9 @@ The other day, I figured I'd automate my firewall setup a bit more by making it 
 
 ## Drop-in
 
-Primarily because I plan to use this feature in the rest of this post, lets cover the drop-in system of systemd. I think most people who have written systemd services before have put them in /etc/systemd/system, which is great. And if you want to know the full search path systemd uses, it's here [1]. But I saw lots of comments online that people didn't realize that you could make partial systemd unit files where you override parts of a larger unit file - these are called drop-in files. They're documented under the systemd.unit man page [2] under "Description".
+Primarily because I plan to use this feature in the rest of this post, let's cover the drop-in system of systemd. I think most people who have written systemd services before have put them in `/etc/systemd/system`, which is great. And if you want to know the full search path systemd uses, it's here [1]. But I saw lots of comments online that people didn't realize that you could make partial systemd unit files where you override parts of a larger unit file - these are called drop-in files. They're documented under the systemd.unit man page [2] under "Description".
 
-Lets show how this works by first creating a basic unit. I'm going to do this in /etc/systemd (because that's where I'm supposed to do this) but this would work the same in any other directory in the search path). First lets see what systemd sees as our initial test service file:
+The first to do to see how this works is to create a basic unit. I do this in `/etc/systemd/system` (because that's where it's supposed to be done) but this would work the same in any other directory in the search path. Systemd sees our initial test service file as:
 
 ```console
 $ systemctl cat test
@@ -40,7 +40,7 @@ Documentation=test https://www.example.com
 ExecStart=echo "systemd testing"
 ```
 
-And then, create the directory for our drop-in and create a drop-in file in that directory, and see what systemd sees:
+Second, create the directory for the drop-in and create a drop-in file in the `/etc/systemd/system` directory. Systemd sees this as:
 
 ```console
 $ mkdir test.service.d
@@ -60,7 +60,7 @@ ExecStart=echo "systemd testing"
 ExecStart=echo "systemd testing 2"
 ```
 
-And finally, lets run it and look at the echo output (the rest is too noisy - try it yourself):
+Finally, let's run it and look at the echo output (the full output is noisy - try it yourself):
 
 ```console
 $ systemctl start test
@@ -84,7 +84,7 @@ Dec 11 02:46:05 srwilson-u2204 echo[3595571]: systemd testing raw foo\x20bar\x20
 Dec 11 02:46:05 srwilson-u2204 echo[3595572]: systemd testing foo bar baz
 ```
 
-And if you look at how your system is currently using these templates, you'll find some interesting use cases and notice the parameters have been placed in the documentation section too:
+If you look at how your system is currently using these templates, you'll find some interesting use cases and notice the parameters have been placed in the documentation section too:
 
 ```console
 $ systemctl list-units | grep @
@@ -103,7 +103,7 @@ $ systemctl list-units | grep @
 
 # Other systemd apps
 
-Half of the programs systemd comes with aren't in `/usr/bin`, but in `/usr/lib/systemd`. I wouldn't add this to my PATH, but there's some useful programs we can use in our systemd units and should be aware of them:
+Half of the programs systemd comes with aren't in `/usr/bin`, but in `/usr/lib/systemd`. I wouldn't add this to my PATH, but there's some useful programs we can use in our systemd units that we should be aware of:
 
 ```console
 $ find /usr -type f -perm /111 \
@@ -112,11 +112,11 @@ $ find /usr -type f -perm /111 \
 	| column
 ```
 
-There are programs like systemd-networkd-wait-online (SNWO) which has a service wrapper for it so other units aren't started before you're online. Ironically, I'm currently using netplan to connect to wifi (I'm most definitely online) and SNWO says it's failed - SYSTEMD_LOG_LEVEL=debug ./systemd-networkd-wait-online doesn't have my wifi card listed. There's also systemd-nspawn (on Ubuntu, I had to install systemd-container to get) which will start a service in a namespace (container), systemd-cgtop which is a top like tool for cgroups, 
+There are programs like systemd-networkd-wait-online (SNWO) which have a service wrapper so other units aren't started before you're online. Ironically, I'm currently using netplan to connect to wifi (I'm most definitely online) and SNWO says it's failed - `SYSTEMD_LOG_LEVEL=debug ./systemd-networkd-wait-online` doesn't list my wifi card. There's also a systemd-nspawn command (on Ubuntu, I had to install systemd-container to get) that will start a service in a namespace (container), systemd-cgtop, which is a top like tool for cgroups.
 
 ## Debugging
 
-Since most (all?) of the executables in `/lib/systemd` seem to give extra information with a SYSTEMD_LOG_LEVEL=debug and lots of these programs are wrapped in services as we can see here:
+As mentioned in the last section, using `SYSTEMD_LOG_LEVEL=debug` with the commands in `/lib/systemd` provides quite a bit more information about what is happening with systemd commands. As shown below, lots of these commands are wrapped in services:
 
 ```console
 $ find -type f -perm /111 \
@@ -130,20 +130,20 @@ $ find -type f -perm /111 \
     done
 ```
 
-We can create `/etc/systemd/system/<name>.service.d/00-debug.conf` that have:
+I demonstrated drop-ins earlier - when used with the `SYSTEMD_LOG_LEVEL`, we can easily get debug messages from any of these services. Create `/etc/systemd/system/<name>.service.d/00-debug.conf` that has:
 
 ```shell
 [Service]
 Environment=SYSTEMD_LOG_LEVEL=debug
 ```
 
-And get debug information from any of these services. And most other programs take an environment variable to enable some debugging too. In a worst case, when using dynamic programs, the linker provides LD_DEBUG=all that you can use. And this output would show up in the journal log of your service. Lastly, systemd relies heavily on dbus and there's a great blog about using that here [3].
+And reload the services and restart the service and you'll get debug information from that service. Most other programs take an environment variable to enable some debugging information too which can be used similarly. In a worst case, when using dynamic programs, the linker provides `LD_DEBUG=all`. This output would show up in the journal log of your service. Lastly, systemd relies heavily on dbus and there's a great blog about using that here [3].
 
 ## My journey
 
-Now lets get back to why I started looking into this. I've written systemd services before and don't have a need to stand up a tomcat server. I came here to manage the firewall and route parts of my network after a connection was established. This means, I want a systemd service to trigger on some event. There are a few ways to get an event to trigger systemd: a timer, path, udev, or relationship to another service. I'm pretty sure that's it. A timer doesn't do me any good in this situation, so we'll consider the other three.
+Now let's get back to why I started looking into this. I've written systemd services before and don't have a need to stand up a tomcat server. I came here to manage the firewall and route parts of my network after a connection was established. This means, I want a systemd service to trigger on some event. There are a few ways to get an event to trigger systemd: a timer, path, udev, or relationship to another service. I'm pretty sure that's it. A timer doesn't do me any good in this situation, so we'll consider the other three.
 
-First lets deviate into the network specific options systemd does have because there's quite alot. The systemd.link options deals with your hardware link (but not hardware - OSI layer 2) and has documented overlap with udev (and also seems to overlap with ethtool options). But basically anything you could wish to do with your network hardware is probably covered by systemd.link. The systemd.network configures the network (OSI layer 3). And then systemd.netdev configures virtual networks. But none of these unit files have the option to kick off a service after they're done, so I moved on.
+First systemd has many network options and a configuration type for the lower layers of the OSI model. The systemd.link options deal with your hardware link (but not hardware - OSI layer 2) and have documented overlap with udev (and also seems to overlap with ethtool options). But basically anything you could wish to do with your network hardware is probably covered by systemd.link. The systemd.network configures the network (OSI layer 3). The systemd.netdev configures virtual networks. But none of these unit files have the option to kick off a service after they're done, so I moved on.
 
 ### UDEV - unsuccessful
 
@@ -153,7 +153,7 @@ The udev filesystem has been around for almost 20 years now - it quickly took ov
 RUN="systemctl --no-block start <service>"
 ```
 
-And you may want to do this to load the new rule and get already plugged in devices run through that new rule:
+You may want to do this to load the new rule and get already plugged in devices run through that new rule:
 
 ```console
 $ udevadm control --reload-rules
@@ -219,7 +219,7 @@ Restart=on-success
 ExecStart=sh -c 'tail -n1 -f /var/log/syslog 2>/dev/null | grep -q -m1 foobar'
 ```
 
-But we need to enable test and list all of the services we wish it to run in that file. So, we can reverse the dependency structure by putting RequiredBy in an [Install] section and enable the test2 service (instead of enabling the test service). However, in order to ensure the test service is running when enabling test2, we need to use BindsTo or Wants 
+But we need to enable, test, and list all the services we wish it to run in that file. So, we can reverse the dependency structure by putting RequiredBy in an [Install] section and enable the test2 service (instead of enabling the test service). However, to ensure the test service is running when enabling test2, we need to use BindsTo or Wants 
 
 ```console
 $ systemctl cat test2
@@ -262,11 +262,11 @@ Created symlink /etc/systemd/system/test.service.requires/test2.service → /etc
 $ systemctl start test
 ```
 
-So, we need to account for double events and still end up managing the test service. See [4] for a logic diagram of Wants, PartOf, and Requires. There's a mapping of these associative properties and inverses here [5].
+So, we need to account for double events and manage the test service. See [4] for a logic diagram of Wants, PartOf, and Requires. There's a mapping of these associative properties and inverses here [5].
 
 ### Path - partially successful
 
-And finally, we can create a path file which monitors paths like:
+Lastly, we can create a path file which monitors paths like:
 
 ```console
 $ systemctl cat test.path
@@ -283,11 +283,11 @@ Unit=test2.service
 WantedBy=multi-user.target
 ```
 
-Which does as it's intended to and test2 kicks off when /root/foo is modified. However, when I try to do: PathModified=/sys/devices/virtual/net/exttest0/operstate nothing happens. The reason for this is because sysfs isn't an actual filesystem and just an interface to kernel memory. That isn't useful for what I'm trying to accomplish though.
+Which does as it's intended to and test2 kicks off when `/root/foo` is modified. However, when I try to do: `PathModified=/sys/devices/virtual/net/exttest0/operstate` nothing happens. The reason for this is because sysfs isn't an actual filesystem, it is just an interface to kernel memory. That isn't useful for what I'm trying to accomplish.
 
 ## Conclusion
 
-It seems a bit overly complex to make an event based service. Needing to enable a service in order to install reverse dependencies seems a bit unnecessary. However, the service runner does a pretty good job for most cases. I do enjoy not needing to write full wrapper scripts for my services anymore. And for this task, having a service that does:
+It seems a bit overly complex to make an event-based service. It seems unnecessary to enable a service to install reverse dependencies. However, the service runner does a pretty good job for most cases. I do appreciate not having to write full wrapper scripts for my services. For this task, having a service that does:
 
 ```console
 ExecStart=sh -c 'ip monitor link | grep ",UP,LOWER_UP"'
