@@ -108,8 +108,8 @@ Half of the programs systemd comes with aren't in `/usr/bin`, but in `/usr/lib/s
 ```console
 $ find /usr -type f -perm /111 \
   \( -iwholename "/usr/lib/systemd/*" -o -iwholename "/usr/bin/*" \) \
-	-iname "systemd-*" \
-	| column
+  -iname "systemd-*" \
+  | column
 ```
 
 There are programs like systemd-networkd-wait-online (SNWO) which have a service wrapper so other units aren't started before you're online. Ironically, I'm currently using netplan to connect to wifi (I'm most definitely online) and SNWO says it's failed - `SYSTEMD_LOG_LEVEL=debug ./systemd-networkd-wait-online` doesn't list my wifi card. There's also a systemd-nspawn command (on Ubuntu, I had to install systemd-container to get) that will start a service in a namespace (container), systemd-cgtop, which is a top like tool for cgroups.
