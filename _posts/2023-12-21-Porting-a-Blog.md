@@ -54,6 +54,12 @@ I've transferred most of my old posts here moving forward. The old content that 
 
 To close: everything that is currently at [https://ag4ve.blogspot.com](https://ag4ve.blogspot.com) will remain there - I have no plans to touch it. Moving forward, all new content will be at [https://ioswitch.dev](https://ioswitch.dev). As I'm not touching my old blog, it will not recieve any new content.
 
+## Notes
+
+* I verified the site with Google here [7] and used their `PageSpeed Insights` under `Core Web Vitals` to generate reports [8] and [9].
+* I went to Google Analytics page [10] and created a token for a web site and selected to enable it manually and grabbed just the token from the JS snip they provided and verified it.
+* Discus provides a comment section from Github discussions. While I don't like the idea of needing to sign in to comment, this is a technical blog hosted on Github, so having a comments section based on Github seems ok and I enabled it (see [11] for links and settings).
+
 [0]: https://gohugo.io
 [1]: https://go.dev
 [2]: https://shopify.github.io/liquid/
@@ -61,3 +67,9 @@ To close: everything that is currently at [https://ag4ve.blogspot.com](https://a
 [4]: https://github.com/cotes2020/jekyll-theme-chirpy
 [5]: https://github.com/cotes2020/chirpy-starter/blob/main/.github/workflows/pages-deploy.yml
 [6]: https://github.com/ag4ve/ag4ve.github.io/actions
+[7]: https://search.google.com/search-console
+[8]: /static/docs/Google_PageSpeed_Insights.pdf
+[9]: /static/docs/Google_PageSpeed_Insights_mobile.pdf
+[10]: https://analytics.google.com
+[11]: https://github.com/ag4ve/ag4ve.github.io/blob/master/_config.yml#L72
+
