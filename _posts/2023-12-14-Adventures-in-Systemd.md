@@ -25,9 +25,9 @@ The other day, I figured I'd automate my firewall setup a bit more by making it 
 
 ## Drop-in
 
-Primarily because I plan to use this feature in the rest of this post, let's cover the drop-in system of systemd. I think most people who have written systemd services before have put them in `/etc/systemd/system`, which is great. And if you want to know the full search path systemd uses, it's here [1]. But I saw lots of comments online that people didn't realize that you could make partial systemd unit files where you override parts of a larger unit file - these are called drop-in files. They're documented under the systemd.unit man page [2] under "Description".
+Primarily because I plan to use this feature in the rest of this post, let's cover the drop-in system of systemd. I think most people who have written systemd services before have put them in `/etc/systemd/system`, which is great. If you want to know the full search path systemd uses, it's here [1], but I saw lots of comments online that people didn't realize that partial systemd unit files could be made to override parts of a larger unit file - these are called drop-in files. They're documented under the systemd.unit man page [2] under "Description".
 
-The first to do to see how this works is to create a basic unit. I do this in `/etc/systemd/system` (because that's where it's supposed to be done) but this would work the same in any other directory in the search path. Systemd sees our initial test service file as:
+The first thing to do to see how this works is to create a basic unit. I do this in `/etc/systemd/system` (because that's where it's supposed to be done) but this would work the same in any other directory in the search path. Systemd sees our initial test service file as:
 
 ```console
 $ systemctl cat test
@@ -112,7 +112,7 @@ $ find /usr -type f -perm /111 \
   | column
 ```
 
-There are programs like systemd-networkd-wait-online (SNWO) which have a service wrapper so other units aren't started before you're online. Ironically, I'm currently using netplan to connect to wifi (I'm most definitely online) and SNWO says it's failed - `SYSTEMD_LOG_LEVEL=debug ./systemd-networkd-wait-online` doesn't list my wifi card. There's also a systemd-nspawn command (on Ubuntu, I had to install systemd-container to get) that will start a service in a namespace (container), systemd-cgtop, which is a top like tool for cgroups.
+There are programs like systemd-networkd-wait-online (SNWO) which have a service wrapper so other units aren't started before you're online. Ironically, I'm currently using netplan to connect to wifi (I'm most definitely online) and SNWO says it's failed - `SYSTEMD_LOG_LEVEL=debug ./systemd-networkd-wait-online` doesn't list my wifi card. There's also a systemd-nspawn command (on Ubuntu, I had to install systemd-container to get it) that will start a service in a namespace (container), systemd-cgtop, which is a top like tool for cgroups.
 
 ## Debugging
 
@@ -137,13 +137,13 @@ I demonstrated drop-ins earlier - when used with the `SYSTEMD_LOG_LEVEL`, we can
 Environment=SYSTEMD_LOG_LEVEL=debug
 ```
 
-And reload the services and restart the service and you'll get debug information from that service. Most other programs take an environment variable to enable some debugging information too which can be used similarly. In a worst case, when using dynamic programs, the linker provides `LD_DEBUG=all`. This output would show up in the journal log of your service. Lastly, systemd relies heavily on dbus and there's a great blog about using that here [3].
+Reload and restart the service then you'll get debug information from that service. Most other programs take an environment variable to enable some debugging information, too, which can be used similarly. In a worst case, when using dynamic programs, the linker provides `LD_DEBUG=all`. This output would show up in the journal log of your service. Lastly, systemd relies heavily on dbus and there's a great blog about using that here [3].
 
 ## My journey
 
 Now let's get back to why I started looking into this. I've written systemd services before and don't have a need to stand up a tomcat server. I came here to manage the firewall and route parts of my network after a connection was established. This means, I want a systemd service to trigger on some event. There are a few ways to get an event to trigger systemd: a timer, path, udev, or relationship to another service. I'm pretty sure that's it. A timer doesn't do me any good in this situation, so we'll consider the other three.
 
-First systemd has many network options and a configuration type for the lower layers of the OSI model. The systemd.link options deal with your hardware link (but not hardware - OSI layer 2) and have documented overlap with udev (and also seems to overlap with ethtool options). But basically anything you could wish to do with your network hardware is probably covered by systemd.link. The systemd.network configures the network (OSI layer 3). The systemd.netdev configures virtual networks. But none of these unit files have the option to kick off a service after they're done, so I moved on.
+First systemd has many network options and a configuration type for the lower layers of the OSI model. The systemd.link options deal with your hardware link (but not hardware - OSI layer 2) and have documented overlap with udev (and also seems to overlap with ethtool options). Basically anything you could wish to do with your network hardware is probably covered by systemd.link. The systemd.network configures the network (OSI layer 3). The systemd.netdev configures virtual networks; however, none of these unit files have the option to kick off a service after they're done, so I moved on.
 
 ### UDEV - unsuccessful
 
@@ -160,7 +160,7 @@ $ udevadm control --reload-rules
 $ udevadm trigger
 ```
 
-But this is moot. Network links aren't hardware - they're right above hardware in our OSI model. I don't remove my nic (or even adjust the power) when getting online or disconnecting. So a rule her would never fire. Next option.
+But this is moot. Network links aren't hardware - they're right above hardware in our OSI model. I don't remove my nic (or even adjust the power) when getting online or disconnecting. So a rule here would never fire. Next option.
 
 ### Tailing - successful
 
@@ -186,7 +186,7 @@ The simplest way to test this is with the logger command:
 $ logger foobar
 ```
 
-This sends `foobar` to syslogd to be processed which writes to the syslog file we're monitoring. After it matches one and only one event, it stops running, and runs the ExecStopPost command. This echo shows up in journalctl (for our test but could be any command). We can see this here:
+This sends `foobar` to syslogd to be processed, which writes to the syslog file we're monitoring. After it matches one and only one event, it stops running, and runs the ExecStopPost command. This echo shows up in journalctl (for our test but it could be any command). We can see this here:
 
 ```console
 $ journalctl -xe -u test2 | grep echo
