@@ -32,11 +32,11 @@ I’m working on a script to iterate over all containers in a repository and loo
 Scriptable app to search through CVEs (from voice commands). I’m an Extra class Amateur Radio operator. I publish a blog on
 random technologies that interest me.
 
-| :--------------------------------------------- | :---------------------------------------------------------------------------- |
-| [Blog](http://ioswitch.dev)                    | [tmux-start](https://github.com/ag4ve/misc-scripts/blob/master/tmux-start.sh) |
-| [Github](https://github.com/ag4ve)             | [bashpack](https://github.com/ag4ve/misc-scripts/blob/master/bashpack.pl)     |
-| [NF-Save](https://github.com/ag4ve/NF-Save)    | [bash libs](https://github.com/ag4ve/bash-libs)                               |
-| [mon-hosts](https://github.com/ag4ve/misc-scripts/blob/master/mon-hosts-packed)  | |
+| :------------------------------------------------------------------------------- | :---------------------------------------------------------------------------- |
+| [Blog](http://ioswitch.dev)                                                      | [tmux-start](https://github.com/ag4ve/misc-scripts/blob/master/tmux-start.sh) |
+| [Github](https://github.com/ag4ve)                                               | [bashpack](https://github.com/ag4ve/misc-scripts/blob/master/bashpack.pl)     |
+| [NF-Save](https://github.com/ag4ve/NF-Save)                                      | [bash libs](https://github.com/ag4ve/bash-libs)                               |
+| [mon-hosts](https://github.com/ag4ve/misc-scripts/blob/master/mon-hosts-packed)  | [nft policy](https://github.com/ag4ve/nft-policy)                             |
 
 
 ##### CERTIFICATIONS
