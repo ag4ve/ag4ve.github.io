@@ -22,15 +22,12 @@ order: 4
   + Chef, Ansible, AWS Cloudformation, and Terraform
 - Deep knowledge of:
   + regex and globs
-  + bash
-  + Perl, Ruby, Python
+  + Bash, Perl, Ruby, Python
   + Linux (including some kernel level module/udev topics)
   + git (refer to my blog post on it – see link below)
 
 ##### __ACTIVITIES__:
-I’m working on a script to iterate over all containers in a repository and look for secrets in each checkpoint and writing an IOS
-Scriptable app to search through CVEs (from voice commands). I’m an Extra class Amateur Radio operator. I publish a blog on
-random technologies that interest me.
+I have been writing blog posts (and supporting code) about Linux firewall deployments, systemd, linux containers. I am studying for the professional Kubernetes certificates, learning rust, and extending the Grype database. I’m an Extra class Amateur Radio operator. I publish a blog on random technologies that interest me.
 
 | :------------------------------------------------------------------------------- | :---------------------------------------------------------------------------- |
 | [Blog](http://ioswitch.dev)                                                      | [tmux-start](https://github.com/ag4ve/misc-scripts/blob/master/tmux-start.sh) |
@@ -38,9 +35,6 @@ random technologies that interest me.
 | [NF-Save](https://github.com/ag4ve/NF-Save)                                      | [bash libs](https://github.com/ag4ve/bash-libs)                               |
 | [mon-hosts](https://github.com/ag4ve/misc-scripts/blob/master/mon-hosts-packed)  | [nft policy](https://github.com/ag4ve/nft-policy)                             |
 
-
-##### CERTIFICATIONS
-CompTIA A+, Security+ and Linux+ 	
 
 #### PROFESSIONAL EXPERIENCE
 
@@ -57,9 +51,9 @@ CompTIA A+, Security+ and Linux+
 
 ##### Senior Systems Admin
 ###### Innotac (contract: USCIS) – Falls Church, VA _Feb_ _2016_ _–_ _July_ _2020_
- * Worked between 3 AWS accounts containing multiple VPCs each and deployments in 12-17 unique environments
- * Designed and implemented a deployment strategy for RHEL/CentOS systems in Amazon Web Services cloud (create a shell script, cloudformation template
- * Managed a Chef upgrade (version 11 to 14) and repo cleanup
+ * Worked with 3 AWS accounts containing multiple VPCs to their own Cisco CSR/DirectConnect and multiple deployments/environments
+ * Designed and implemented a deployment strategy for RHEL/CentOS systems in AWS (created shell scripts, cloudformation templates, updated packer scripts, chef cookbooks)
+ * Managed two coworkers to upgrade a large Chef environment (version 11 to 14), repo cleanup, and supermarket deployment
  * Implemented Hashicorp Vault (including OIDC sign in and AWS instance authentication for host secrets)
  * Created a chef resource (LWRP) to create iptables rules from protocol/application rule definitions and created a Splunk dashboard to show iptables log data across all servers
  * Investigated and explained or remediated security audit findings
