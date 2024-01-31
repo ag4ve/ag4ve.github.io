@@ -4,7 +4,7 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-[PDF Resume](//static/docs/SRW_Resume_20231011.pdf)
+[PDF Resume](/static/docs/SRW_Resume_20240130.pdf)
 ### Shawn Wilson
 
 | :----------------------------------------------------- | -------------------------------------: |
