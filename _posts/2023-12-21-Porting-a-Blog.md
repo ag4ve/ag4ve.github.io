@@ -27,11 +27,11 @@ But Blogger has some short comings for me. Primarily: I want to write in markdow
 * More control over or being able to improve the theme
 * More selection of themes to choose from
 * Adding a menu
-* Creating quoted text
 * Tracking changes
 * A nicer look on mobile devices
+* Creating `quoted` text
 
-I think this last one made the quality of the content suffer quite a bit as there was no differenciation between what I was writing and the examples I was showing. Lastly, I wanted to be able to expand the platform - add a tab for pictures or automatically include a screenshot of a site I'm linking to or... I don't really know. But being able to alter the workflow is often fun.
+I think not being able quote text especially made the quality of the content suffer quite a bit as there was no differenciation between what I was writing and the examples I was showing. Lastly, I wanted to be able to expand the platform - add a tab for pictures or automatically include a screenshot of a site I'm linking to or... I don't really know. But being able to alter the workflow is often fun.
 
 ## Where to?
 
